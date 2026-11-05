@@ -76,6 +76,24 @@ add(slug="image-captioning", title="Image Captioning on Flickr30k",
           "The Transformer decoder gives the best scores among the trained models."],
  gallery=[("captioning/app", "Web application home page", "Web application"), ("captioning/examples", "Flickr30k examples", "Flickr30k examples"), ("captioning/bilstm", "InceptionV3 + BiLSTM architecture", "InceptionV3 + BiLSTM"), ("captioning/blip", "BLIP architecture", "BLIP")])
 
+add(slug="aman-hydroponic", title="AMAN: Smart Vertical Hydroponic System",
+ short="AgriTech prototype built in 48 hours at Water4Future 2026: a vertical hydroponic tower with closed-loop irrigation, a real-time IoT dashboard, the AmanBot chatbot and predictive AI.",
+ cats=["embedded", "ml"], stack=["IoT sensors", "Real-time dashboard", "AI chatbot", "Predictive AI", "Solar energy"],
+ cover="aman/prototype", cover_fit="cover", cover_pos="50% 62%", repo=None,
+ context="Water4Future International Hackathon 2026, Montpellier, Team AMAN", hackathon="water4future-2026",
+ problem="Irrigation wastes water: the team's pitch cites the FAO figure that 70% of the water used in irrigation is lost, and about 2,000 litres of water to grow 1 kg of vegetables. AMAN aims to optimise water management and make agriculture more accessible with a vertical system that recirculates its water and monitors itself.",
+ built=["An AgriTech solution built in 48 hours by Team AMAN: a smart vertical hydroponic tower with closed-loop irrigation.",
+        "A real-time IoT dashboard for pH, EC (electrical conductivity), temperature and solar energy.",
+        "AmanBot, an AI diagnostic chatbot for crop management.",
+        "Predictive AI for decision support, with solar power for energy autonomy.",
+        "A pitch with a business model canvas, cost structure, financial analysis and a 6-month roadmap: prototype optimisation, pilot phase, impact measurement and preparation for deployment."],
+ results=["Semi-finalist (top 38 of 125+ teams) at the Water4Future International Hackathon 2026, and winner of the jury's 2026 W4F Students Hackathon Water Talent Prize.",
+          "Hackathon prototype: there is no public code repository."],
+ files=[("hackathons/water4future-2026/water-talent-prize.webp", "Water Talent Prize certificate", "Image"),
+        ("hackathons/water4future-2026/attestation-of-participation.webp", "Attestation of participation", "Image"),
+        ("hackathons/water4future-2026/aman-presentation.pdf", "AMAN pitch presentation (French)", "PDF")],
+ gallery=[("aman/prototype", "AMAN prototype: vertical hydroponic tower next to a laptop showing the monitoring dashboard", "AMAN prototype and live dashboard")])
+
 add(slug="ctr-prediction", title="CTR Prediction: Machine Learning from Scratch",
  short="Decision Tree, Logistic Regression, Naive Bayes and SVM implemented from scratch with NumPy and compared with scikit-learn.",
  cats=["ml"], stack=["Python", "NumPy", "scikit-learn", "Pandas"],
@@ -337,7 +355,7 @@ HACKATHONS = [
              "A real-time IoT dashboard for pH, EC, temperature and solar energy.",
              "AmanBot, an AI diagnostic chatbot for crop management.",
              "Predictive AI for decision support."],
-      project=None, project_note="AMAN was built during the hackathon and has no public code repository.",
+      project="aman-hydroponic", project_note="",
       images=[("hackathons/water4future-2026/aman-prototype-demo.webp", "Abdessamad Ait Brahim seated next to the AMAN hydroponic tower and a laptop showing the monitoring dashboard", "With the AMAN prototype"),
               ("hackathons/water4future-2026/aman-prototype.webp", "AMAN prototype: vertical hydroponic tower next to a laptop showing the monitoring dashboard", "AMAN prototype and live dashboard"),
               ("hackathons/water4future-2026/water-talent-prize.webp", "2026 W4F Students Hackathon Water Talent Prize awarded to the project Aman", "Water Talent Prize"),
@@ -479,6 +497,7 @@ def size(key):
 
 for p in P:
     p["gallery"] = [dict(img=g[0], alt=g[1], caption=g[2], w=S[g[0]][0], h=S[g[0]][1]) for g in p.get("gallery", [])]
+    p["files"] = [dict(src=f[0], label=f[1], kind=f[2]) for f in p.get("files", [])]
     if p.get("cover"):
         p["cover_w"], p["cover_h"] = S[p["cover"]]
     p.setdefault("results", [])

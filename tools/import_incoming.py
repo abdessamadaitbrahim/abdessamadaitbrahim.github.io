@@ -164,6 +164,9 @@ def main():
     print("Water4Future")
     webp(SRC / "water4future-2026/aman-prototype-demo.jpg", w4f / "aman-prototype-demo.webp", 900)
     webp(SRC / "water4future-2026/aman-hydroponic-prototype.jpg", w4f / "aman-prototype.webp", 900)
+    # AMAN case-study cover (the tower without people), keyed like the other project images
+    webp(SRC / "water4future-2026/aman-hydroponic-prototype.jpg", ROOT / "assets/img/projects/aman/prototype.webp", 900)
+    SIZES["aman/prototype"] = SIZES.pop("img/projects/aman/prototype.webp")
     webp(SRC / "water4future-2026/water-talent-prize.jpg", w4f / "water-talent-prize.webp", 1200)
     webp(SRC / "water4future-2026/attestation-of-participation.jpg", w4f / "attestation-of-participation.webp", 1100)
     pdf(SRC / "water4future-2026/aman-presentation.pdf", w4f / "aman-presentation.pdf", drop_pages={16})

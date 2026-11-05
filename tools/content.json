@@ -292,6 +292,7 @@
      "h": 393
     }
    ],
+   "files": [],
    "cover_w": 1400,
    "cover_h": 776
   },
@@ -350,6 +351,7 @@
      "h": 1034
     }
    ],
+   "files": [],
    "cover_w": 1400,
    "cover_h": 537
   },
@@ -413,6 +415,7 @@
      "h": 785
     }
    ],
+   "files": [],
    "cover_w": 1400,
    "cover_h": 765
   },
@@ -476,8 +479,72 @@
      "h": 561
     }
    ],
+   "files": [],
    "cover_w": 1400,
    "cover_h": 707,
+   "featured": false
+  },
+  {
+   "slug": "aman-hydroponic",
+   "title": "AMAN: Smart Vertical Hydroponic System",
+   "short": "AgriTech prototype built in 48 hours at Water4Future 2026: a vertical hydroponic tower with closed-loop irrigation, a real-time IoT dashboard, the AmanBot chatbot and predictive AI.",
+   "cats": [
+    "embedded",
+    "ml"
+   ],
+   "stack": [
+    "IoT sensors",
+    "Real-time dashboard",
+    "AI chatbot",
+    "Predictive AI",
+    "Solar energy"
+   ],
+   "cover": "aman/prototype",
+   "cover_fit": "cover",
+   "cover_pos": "50% 62%",
+   "repo": null,
+   "context": "Water4Future International Hackathon 2026, Montpellier, Team AMAN",
+   "hackathon": "water4future-2026",
+   "problem": "Irrigation wastes water: the team's pitch cites the FAO figure that 70% of the water used in irrigation is lost, and about 2,000 litres of water to grow 1 kg of vegetables. AMAN aims to optimise water management and make agriculture more accessible with a vertical system that recirculates its water and monitors itself.",
+   "built": [
+    "An AgriTech solution built in 48 hours by Team AMAN: a smart vertical hydroponic tower with closed-loop irrigation.",
+    "A real-time IoT dashboard for pH, EC (electrical conductivity), temperature and solar energy.",
+    "AmanBot, an AI diagnostic chatbot for crop management.",
+    "Predictive AI for decision support, with solar power for energy autonomy.",
+    "A pitch with a business model canvas, cost structure, financial analysis and a 6-month roadmap: prototype optimisation, pilot phase, impact measurement and preparation for deployment."
+   ],
+   "results": [
+    "Semi-finalist (top 38 of 125+ teams) at the Water4Future International Hackathon 2026, and winner of the jury's 2026 W4F Students Hackathon Water Talent Prize.",
+    "Hackathon prototype: there is no public code repository."
+   ],
+   "files": [
+    {
+     "src": "hackathons/water4future-2026/water-talent-prize.webp",
+     "label": "Water Talent Prize certificate",
+     "kind": "Image"
+    },
+    {
+     "src": "hackathons/water4future-2026/attestation-of-participation.webp",
+     "label": "Attestation of participation",
+     "kind": "Image"
+    },
+    {
+     "src": "hackathons/water4future-2026/aman-presentation.pdf",
+     "label": "AMAN pitch presentation (French)",
+     "kind": "PDF"
+    }
+   ],
+   "gallery": [
+    {
+     "img": "aman/prototype",
+     "alt": "AMAN prototype: vertical hydroponic tower next to a laptop showing the monitoring dashboard",
+     "caption": "AMAN prototype and live dashboard",
+     "w": 360,
+     "h": 480
+    }
+   ],
+   "cover_w": 360,
+   "cover_h": 480,
    "featured": false
   },
   {
@@ -531,6 +598,7 @@
      "h": 822
     }
    ],
+   "files": [],
    "cover_w": 790,
    "cover_h": 590,
    "featured": false
@@ -571,6 +639,7 @@
      "h": 1000
     }
    ],
+   "files": [],
    "cover_w": 1400,
    "cover_h": 1000,
    "featured": false
@@ -626,6 +695,7 @@
      "h": 454
     }
    ],
+   "files": [],
    "cover_w": 1155,
    "cover_h": 718,
    "featured": false
@@ -674,6 +744,7 @@
      "h": 678
     }
    ],
+   "files": [],
    "cover_w": 1268,
    "cover_h": 678,
    "featured": false
@@ -729,6 +800,7 @@
      "h": 202
     }
    ],
+   "files": [],
    "cover_w": 1090,
    "cover_h": 572
   },
@@ -781,6 +853,7 @@
      "h": 1000
     }
    ],
+   "files": [],
    "cover_w": 1400,
    "cover_h": 788,
    "featured": false
@@ -841,6 +914,7 @@
      "h": 518
     }
    ],
+   "files": [],
    "cover_w": 827,
    "cover_h": 808,
    "featured": false
@@ -883,6 +957,7 @@
      "h": 385
     }
    ],
+   "files": [],
    "cover_w": 780,
    "cover_h": 385,
    "featured": false
@@ -930,6 +1005,7 @@
      "h": 732
     }
    ],
+   "files": [],
    "cover_w": 1077,
    "cover_h": 602,
    "featured": false
@@ -966,6 +1042,7 @@
      "h": 850
     }
    ],
+   "files": [],
    "cover_w": 1400,
    "cover_h": 850,
    "featured": false
@@ -1009,6 +1086,7 @@
      "h": 942
     }
    ],
+   "files": [],
    "cover_w": 1400,
    "cover_h": 921,
    "featured": false
@@ -1049,6 +1127,7 @@
      "h": 741
     }
    ],
+   "files": [],
    "cover_w": 1400,
    "cover_h": 741,
    "featured": false
@@ -1081,6 +1160,7 @@
     "Matrices and vectors are generated randomly, so numerical results change at each run."
    ],
    "gallery": [],
+   "files": [],
    "featured": false
   },
   {
@@ -1118,6 +1198,7 @@
      "h": 1935
     }
    ],
+   "files": [],
    "cover_w": 1400,
    "cover_h": 1935,
    "featured": false
@@ -1146,6 +1227,7 @@
    ],
    "results": [],
    "gallery": [],
+   "files": [],
    "featured": false
   }
  ],
@@ -1330,8 +1412,8 @@
     "AmanBot, an AI diagnostic chatbot for crop management.",
     "Predictive AI for decision support."
    ],
-   "project": null,
-   "project_note": "AMAN was built during the hackathon and has no public code repository.",
+   "project": "aman-hydroponic",
+   "project_note": "",
    "images": [
     {
      "src": "hackathons/water4future-2026/aman-prototype-demo.webp",

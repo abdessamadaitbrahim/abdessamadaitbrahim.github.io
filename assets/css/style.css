@@ -354,7 +354,6 @@ section.block{padding-block:52px 12px}
   .nav__menu{position:static;display:flex;min-width:0;padding:0;border:0;box-shadow:none;background:none}
   .nav__label{display:block;font:500 .66rem/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);padding:22px 4px 8px}
   .nav__menu a{padding:14px 4px}
-  .grid--3{grid-template-columns:repeat(2,minmax(0,1fr))}
   .interests{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media (max-width:1000px){
@@ -374,6 +373,10 @@ section.block{padding-block:52px 12px}
   .entry__when span{position:static}
   .site-footer .container{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
   .foot__brand{grid-column:1/-1}
+}
+/* project grids keep 3 columns (a full 3 x 3) down to 760 px, then 2, then 1 */
+@media (max-width:760px){
+  .grid--3{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media (max-width:640px){
   .container,.narrow,.pager__back{width:calc(100% - 32px)}

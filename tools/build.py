@@ -22,7 +22,7 @@ CATS = [("all", "All"), ("nlp", "NLP"), ("vision", "Computer Vision"), ("dl", "D
         ("ml", "Machine Learning"), ("bigdata", "Big Data"), ("embedded", "Embedded & IoT"),
         ("bi", "Data & BI"), ("foundations", "Foundations")]
 CAT_LABEL = dict(CATS)
-INITIAL = 8  # cards shown on projects.html before "Show all"
+INITIAL = 9  # cards shown before "Show all" on projects.html, and on the home page (a full 3 x 3 grid)
 
 # key, label, file, one-line description (used by the home index and the footer)
 PAGES = [
@@ -243,11 +243,18 @@ def card(pr, i, p, compact=False):
     href = f'{p}projects/{pr["slug"]}.html'
     if pr.get("cover"):
         cls = "card__media card__media--contain" if pr.get("cover_fit") == "contain" else "card__media"
-        media = f'<a class="{cls}" href="{href}" tabindex="-1" aria-hidden="true">{pimg(pr["cover"], "", pr["cover_w"], pr["cover_h"], p)}</a>'
+        im = pimg(pr["cover"], "", pr["cover_w"], pr["cover_h"], p)
+        if pr.get("cover_pos"):
+            im = im.replace("<img ", f'<img style="object-position:{pr["cover_pos"]}" ', 1)
+        media = f'<a class="{cls}" href="{href}" tabindex="-1" aria-hidden="true">{im}</a>'
     else:
         media = f'<a class="card__media" href="{href}" tabindex="-1" aria-hidden="true"><span class="ph">{e(pr.get("label", pr["title"]))}</span></a>'
     extra = " is-extra" if (not compact and i >= INITIAL) else ""
-    links = f'<a href="{href}">Case study {ICON["arrow"]}</a><a href="{pr["repo"]}" rel="noopener">Code {ICON["ext"]}</a>'
+    links = f'<a href="{href}">Case study {ICON["arrow"]}</a>'
+    if pr.get("repo"):
+        links += f'<a href="{pr["repo"]}" rel="noopener">Code {ICON["ext"]}</a>'
+    elif pr.get("hackathon"):
+        links += f'<a href="{p}hackathons/{pr["hackathon"]}.html">Hackathon page {ICON["arrow"]}</a>'
     if pr.get("demo"):
         links += f'<a href="{pr["demo"]}" rel="noopener">Live demo {ICON["ext"]}</a>'
     return f'''<article class="card reveal{extra}" data-cats="{cats}">
@@ -280,7 +287,7 @@ def ul(items):
 def page_index():
     p = ""
     a = D["about"]
-    featured = [pr for pr in PROJECTS if pr["featured"]][:4]
+    featured = PROJECTS[:INITIAL]
     cards = "\n".join(card(pr, PROJECTS.index(pr), p, compact=True) for pr in featured)
     latest = HACKS[-1]
     li = latest["images"][0]
@@ -333,8 +340,8 @@ def page_index():
 </section>
 
 <section class="block" id="work" aria-labelledby="work-h">
-<div class="block__head reveal"><p class="eyebrow"><span class="num">02</span>Selected projects</p><h2 id="work-h">Four projects to start with</h2></div>
-<div class="grid grid--4">
+<div class="block__head reveal"><p class="eyebrow"><span class="num">02</span>Selected projects</p><h2 id="work-h">Nine projects to start with</h2></div>
+<div class="grid grid--3">
 {cards}
 </div>
 <p class="center"><a class="btn" href="projects.html">All {len(PROJECTS)} projects {ICON['arrow']}</a></p>
@@ -425,9 +432,13 @@ def page_project(i):
     cover = ""
     if gal:
         g = gal[0]
-        cls = "cover cover--contain" if pr.get("cover_fit") == "contain" or g["img"] != pr.get("cover") else "cover"
+        portrait = g["h"] > g["w"]
+        cls = "cover cover--contain" if pr.get("cover_fit") == "contain" or g["img"] != pr.get("cover") or portrait else "cover"
         cover = f'<figure class="{cls}">{pimg(g["img"], g["alt"], g["w"], g["h"], p, lazy=False)}<figcaption>{e(g["caption"])}</figcaption></figure>'
-    links = f'<a class="btn btn--primary" href="{pr["repo"]}" rel="noopener">{ICON["github"]} Code on GitHub</a>'
+    if pr.get("repo"):
+        links = f'<a class="btn btn--primary" href="{pr["repo"]}" rel="noopener">{ICON["github"]} Code on GitHub</a>'
+    else:
+        links = f'<a class="btn btn--primary" href="../hackathons/{pr["hackathon"]}.html">Hackathon page {ICON["arrow"]}</a>'
     if pr.get("demo"):
         links += f'<a class="btn" href="{pr["demo"]}" rel="noopener">Live demo {ICON["ext"]}</a>'
     related = []
@@ -457,10 +468,15 @@ def page_project(i):
     if len(gal) > 1:
         figs = "".join(f'<figure class="reveal"><a href="{p}assets/img/projects/{x["img"]}.webp">{pimg(x["img"], x["alt"], x["w"], x["h"], p)}</a><figcaption>{e(x["caption"])}</figcaption></figure>' for x in gal[1:])
         sec("gallery", "Gallery", f'<div class="gallery">{figs}</div>')
+    docs = "".join(file_link(f["src"], f["label"], f["kind"], p) for f in pr.get("files", []))
+    if docs:
+        sec("documents", "Documents", f'<ul class="files reveal">{docs}</ul>')
     desc = pr["short"]
-    code = {"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": pr["title"], "description": desc,
-            "author": {"@type": "Person", "name": NAME, "url": URL + "/"}, "codeRepository": pr["repo"],
+    code = {"@context": "https://schema.org", "@type": "SoftwareSourceCode" if pr.get("repo") else "CreativeWork", "name": pr["title"], "description": desc,
+            "author": {"@type": "Person", "name": NAME, "url": URL + "/"},
             "keywords": ", ".join(pr["stack"]), "url": f'{URL}/projects/{pr["slug"]}.html'}
+    if pr.get("repo"):
+        code["codeRepository"] = pr["repo"]
     if gal:
         code["image"] = f'{URL}/assets/img/projects/{gal[0]["img"]}.webp'
     crumb = f'<a href="../index.html">Home</a><span aria-hidden="true">/</span><a href="../projects.html">Projects</a><span aria-hidden="true">/</span><span aria-current="page">{e(pr["title"])}</span>'
