@@ -691,11 +691,9 @@ def page_contact():
 <div class="contact__item" id="email">
 <a class="contact__row" data-email data-user="{SITE['email_user']}" data-domain="{SITE['email_domain']}" href="#email">{ICON['mail']}<span><b>Email</b><small data-email-text>Shown when JavaScript is on, to keep it away from spam bots</small></span>{ICON['ext']}</a>
 <div class="contact__alt" role="group" aria-label="Email actions">
-<button class="copy" type="button" data-copy-email data-user="{SITE['email_user']}" data-domain="{SITE['email_domain']}" aria-label="Copy email address" hidden>{ICON['copy']}<span>Copy address</span></button>
 <a class="copy" href="#email" data-email data-user="{SITE['email_user']}" data-domain="{SITE['email_domain']}">{ICON['mail']}<span>Open in Gmail</span></a>
-<a class="copy" href="#email" data-email-outlook data-user="{SITE['email_user']}" data-domain="{SITE['email_domain']}">{ICON['mail']}<span>Open in Outlook</span></a>
+<button class="copy" type="button" data-copy-email data-user="{SITE['email_user']}" data-domain="{SITE['email_domain']}" aria-label="Copy email address" hidden>{ICON['copy']}<span>Copy address</span></button>
 </div>
-<p class="contact__fallback"><a href="#email" data-email-app data-user="{SITE['email_user']}" data-domain="{SITE['email_domain']}" hidden>or use your default mail app</a></p>
 <span class="sr-only" role="status" aria-live="polite" data-copy-status></span>
 </div>
 <a class="contact__row" href="{SITE['linkedin']}" rel="me noopener">{ICON['linkedin']}<span><b>LinkedIn</b><small>in/abdessamad-aitbrahim</small></span>{ICON['ext']}</a>

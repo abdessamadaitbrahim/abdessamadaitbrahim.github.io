@@ -104,8 +104,7 @@
   }
 
   /* email, assembled in the browser so it is not in the page source.
-     Primary Email links open a ready-to-send Gmail compose window in a new tab;
-     "Open in mail app" uses mailto: in the same tab for visitors who do not use Gmail. */
+     Every Email link opens a ready-to-send Gmail compose window in a new tab. */
   var SUBJECT = "Portfolio contact";
   function address(el) { return el.getAttribute("data-user") + "@" + el.getAttribute("data-domain"); }
   $$("[data-email]").forEach(function (el) {
@@ -115,17 +114,6 @@
     el.setAttribute("rel", "noopener noreferrer");
     var t = $("[data-email-text]", el);
     if (t) t.textContent = addr;
-  });
-  $$("[data-email-outlook]").forEach(function (el) {
-    el.setAttribute("href", "https://outlook.live.com/mail/0/deeplink/compose?to=" + encodeURIComponent(address(el)) + "&subject=" + encodeURIComponent(SUBJECT));
-    el.setAttribute("target", "_blank");
-    el.setAttribute("rel", "noopener noreferrer");
-  });
-  $$("[data-email-app]").forEach(function (el) {
-    el.setAttribute("href", "mailto:" + address(el) + "?subject=" + encodeURIComponent(SUBJECT));
-    el.removeAttribute("target");
-    el.removeAttribute("rel");
-    el.hidden = false;
   });
 
   /* "Copy address" fallback for visitors without a mail app */

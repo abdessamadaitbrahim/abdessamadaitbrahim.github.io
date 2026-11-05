@@ -300,9 +300,6 @@ section.block{padding-block:52px 12px}
 .copy.is-done{border-color:var(--sage);color:var(--sage)}
 /* the label keeps its width when it switches to "Copied", so nothing moves */
 .copy[data-copy-email] span{display:inline-block;min-width:12ch;text-align:left}
-.contact__fallback{margin:10px 0 0 52px;font-size:.88rem}
-.contact__fallback a{color:var(--muted)}
-.contact__fallback a:hover{color:var(--accent)}
 .foot__mail{display:flex;align-items:center;gap:10px;flex-wrap:nowrap;white-space:nowrap;min-width:0}
 .copy--sm{flex:none;padding:3px 8px;gap:5px;font-size:.75rem;line-height:1.2;letter-spacing:.02em;border-color:var(--rule);background:transparent;color:var(--muted)}
 .copy--sm:hover{border-color:var(--accent);color:var(--accent)}
@@ -390,7 +387,6 @@ section.block{padding-block:52px 12px}
   .cert{grid-template-columns:minmax(0,1fr)}
   .cert__preview{max-width:240px}
   .contact__alt{margin-left:6px}
-  .contact__fallback{margin-left:6px}
   .btn{padding:12px 16px}
   .intro{padding-block:32px 36px}
   .crumb [aria-current]{max-width:18ch}
