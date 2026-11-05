@@ -264,7 +264,6 @@ def card(pr, i, p, compact=False):
 def portrait(p):
     return f'''<figure class="portrait reveal">
 <div class="portrait__disc">{img("img/site/portrait.webp", "Portrait of Abdessamad Ait Brahim", 600, 639, p, lazy=False)}</div>
-<figcaption class="portrait__cap"><span>Fig. 01</span> Abdessamad Ait Brahim &middot; Morocco</figcaption>
 </figure>'''
 
 
