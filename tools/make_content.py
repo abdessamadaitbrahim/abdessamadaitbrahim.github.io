@@ -449,7 +449,7 @@ ABOUT = dict(
              "I am looking for a 6-month PFE internship starting in January 2027, with a long-term goal of pursuing a PhD in AI."],
  quote="Everything will come in its time, right and fittingly.",
  facts=[("Studying", "Big Data & AI engineering, ENSA Tétouan"), ("Looking for", "6-month PFE internship, January 2027"),
-        ("Long-term goal", "PhD in AI"), ("Based in", "Morocco")],
+        ("Long-term goal", "PhD in AI"), ("Location", "Morocco, open to international opportunities")],
 )
 
 SITE = dict(

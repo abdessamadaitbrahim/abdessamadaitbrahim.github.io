@@ -689,14 +689,17 @@ def page_contact():
             + f'''<div class="container narrow">
 <div class="contact reveal">
 <div class="contact__item" id="email">
-<a class="contact__row" data-email data-user="{SITE['email_user']}" data-domain="{SITE['email_domain']}" href="#email">{ICON['mail']}<span><b>Email</b><small data-email-text>Shown when JavaScript is on, to keep it away from spam bots</small></span>{ICON['arrow']}</a>
+<a class="contact__row" data-email data-user="{SITE['email_user']}" data-domain="{SITE['email_domain']}" href="#email">{ICON['mail']}<span><b>Email</b><small data-email-text>Shown when JavaScript is on, to keep it away from spam bots</small></span>{ICON['ext']}</a>
+<div class="contact__alt">
 <button class="copy" type="button" data-copy-email data-user="{SITE['email_user']}" data-domain="{SITE['email_domain']}" hidden>{ICON['copy']}<span>Copy address</span></button>
+<a class="copy" href="#email" data-email-app data-user="{SITE['email_user']}" data-domain="{SITE['email_domain']}" hidden>{ICON['mail']}<span>Open in mail app</span></a>
+</div>
 <span class="sr-only" role="status" aria-live="polite" data-copy-status></span>
 </div>
 <a class="contact__row" href="{SITE['linkedin']}" rel="me noopener">{ICON['linkedin']}<span><b>LinkedIn</b><small>in/abdessamad-aitbrahim</small></span>{ICON['ext']}</a>
 <a class="contact__row" href="{SITE['github']}" rel="me noopener">{ICON['github']}<span><b>GitHub</b><small>@abdessamadaitbrahim</small></span>{ICON['ext']}</a>
 </div>
-<p class="note">Based in Morocco. I usually reply within a few days.</p>
+<p class="note">Based in Morocco, open to international opportunities. I usually reply within a few days.</p>
 </div>''' + seq_pager("contact") + footer(p))
 
 

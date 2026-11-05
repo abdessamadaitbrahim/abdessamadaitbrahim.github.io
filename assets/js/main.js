@@ -104,20 +104,28 @@
   }
 
   /* email, assembled in the browser so it is not in the page source.
-     A plain mailto: link in the same tab opens the visitor's mail app with a new message. */
+     Primary Email links open a ready-to-send Gmail compose window in a new tab;
+     "Open in mail app" uses mailto: in the same tab for visitors who do not use Gmail. */
+  var SUBJECT = "Portfolio contact";
   function address(el) { return el.getAttribute("data-user") + "@" + el.getAttribute("data-domain"); }
   $$("[data-email]").forEach(function (el) {
     var addr = address(el);
-    el.setAttribute("href", "mailto:" + addr + "?subject=" + encodeURIComponent("Portfolio contact"));
-    el.removeAttribute("target");
-    el.removeAttribute("rel");
+    el.setAttribute("href", "https://mail.google.com/mail/?view=cm&fs=1&to=" + encodeURIComponent(addr) + "&su=" + encodeURIComponent(SUBJECT));
+    el.setAttribute("target", "_blank");
+    el.setAttribute("rel", "noopener noreferrer");
     var t = $("[data-email-text]", el);
     if (t) t.textContent = addr;
+  });
+  $$("[data-email-app]").forEach(function (el) {
+    el.setAttribute("href", "mailto:" + address(el) + "?subject=" + encodeURIComponent(SUBJECT));
+    el.removeAttribute("target");
+    el.removeAttribute("rel");
+    el.hidden = false;
   });
 
   /* "Copy address" fallback for visitors without a mail app */
   $$("[data-copy-email]").forEach(function (btn) {
-    var addr = address(btn), label = $("span", btn), status = $("[data-copy-status]", btn.parentNode), timer = 0;
+    var addr = address(btn), label = $("span", btn), status = $("[data-copy-status]", btn.closest(".contact__item") || btn.parentNode), timer = 0;
     function done(ok) {
       label.textContent = ok ? "Copied" : addr;
       if (status) status.textContent = ok ? "Email address copied to the clipboard" : "Copy failed; the address is " + addr;
