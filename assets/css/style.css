@@ -273,6 +273,13 @@ section.block{padding-block:52px 12px}
 .files b{display:block;font-weight:500}
 .files small{font:500 .72rem/1.4 var(--mono);color:var(--muted)}
 
+.cert{display:grid;grid-template-columns:150px minmax(0,1fr);gap:22px;align-items:start;margin-top:22px;padding:16px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+.cert__preview{display:block;border:1px solid var(--line);border-radius:3px;overflow:hidden;background:var(--media);transition:transform .25s,box-shadow .25s}
+.cert__preview:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.cert__preview img{width:100%;height:auto}
+.cert__body .eyebrow{margin-bottom:10px}
+.cert__body .note{margin-top:10px}
+
 /* ---------- cv, contact ---------- */
 .narrow{padding-block:48px 16px}
 .panel{padding:32px;border:1px solid var(--line);border-top:3px solid var(--accent);background:var(--surface);border-radius:0 0 var(--radius) var(--radius);box-shadow:var(--shadow)}
@@ -284,6 +291,12 @@ section.block{padding-block:52px 12px}
 .contact__row:hover{background:var(--surface);padding-left:14px;color:var(--ink)}
 .contact__row > svg:first-child{width:24px;height:24px;color:var(--accent)}
 .contact__row > svg:last-child{width:18px;height:18px;color:var(--muted)}
+.contact__item{border-bottom:1px solid var(--line);padding-bottom:16px}
+.contact__item .contact__row{border-bottom:0}
+.copy{display:inline-flex;align-items:center;gap:8px;margin-left:52px;padding:8px 12px;border:1px solid var(--line);border-radius:3px;background:var(--surface);color:var(--ink);font:500 .72rem/1 var(--mono);letter-spacing:.06em;cursor:pointer;transition:border-color .2s,color .2s}
+.copy:hover{border-color:var(--accent);color:var(--accent)}
+.copy svg{width:15px;height:15px}
+.copy.is-done{border-color:var(--sage);color:var(--sage)}
 .contact__row b{display:block;font:400 1.5rem/1.2 var(--serif)}
 .contact__row small{display:block;font:500 .76rem/1.4 var(--mono);color:var(--muted);overflow-wrap:anywhere;margin-top:4px}
 
@@ -362,6 +375,9 @@ section.block{padding-block:52px 12px}
   .pager{grid-template-columns:minmax(0,1fr)}
   .pager__next{text-align:left}
   .teaser,.hcard,.panel{padding:16px}
+  .cert{grid-template-columns:minmax(0,1fr)}
+  .cert__preview{max-width:240px}
+  .copy{margin-left:6px}
   .btn{padding:12px 16px}
   .intro{padding-block:32px 36px}
   .crumb [aria-current]{max-width:18ch}

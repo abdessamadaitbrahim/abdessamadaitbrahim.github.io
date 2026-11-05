@@ -310,15 +310,15 @@ EXPERIENCE = [
 
 # --------------------------------------------------------------------------- education (LinkedIn dates)
 EDUCATION = [
- dict(id="ensa-engineering", school="École Nationale des Sciences Appliquées de Tétouan (ENSA Tétouan)", logo=True,
+ dict(id="ensa-engineering", school="École Nationale des Sciences Appliquées de Tétouan (ENSA Tétouan)", logo=dict(src="img/site/ensa-logo.webp", alt="ENSA Tétouan logo", w=640, h=239),
       degree="Engineering cycle in Big Data and Artificial Intelligence", dates="Sep 2024 – Present",
       detail="Abdelmalek Essaâdi University. Final year; looking for a 6-month PFE internship starting January 2027.",
       skills=["Python", "SQL", "Machine learning", "Deep learning", "Data visualisation", "Agile management", "Trello", "Project management"]),
- dict(id="ensa-prep", school="ENSA Tétouan", logo=True,
+ dict(id="ensa-prep", school="ENSA Tétouan", logo=dict(src="img/site/ensa-logo.webp", alt="ENSA Tétouan logo", w=640, h=239),
       degree="Two-year integrated preparatory programme, engineering studies", dates="2022 – 2024",
       detail="Integrated preparatory years for engineering schools.",
       skills=["Mathematics", "Statistics", "Probability", "Algebra"]),
- dict(id="baccalaureate", school="Lycée Tarik Ibn Ziad, Kelaat M'Gouna, Tinghir", logo=False,
+ dict(id="baccalaureate", school="Lycée Tarik Ibn Ziad, Kelaat M'Gouna, Tinghir", logo=dict(src="img/site/lycee-tarik-ibn-ziad.webp", alt="Lycee Tarik Ibn Ziad logo", w=382, h=152),
       degree="Scientific Baccalaureate, French option", dates="2020 – 2022",
       detail="",
       skills=["Public speaking", "Event presentation", "Teamwork", "Academic competitions"]),
@@ -390,10 +390,16 @@ VOLUNTEERING = [
       points=["Helped refurbish and equip 2 village schools (80 pupils aged 3 to 6) so they could open.",
               "Took part in workshops and debates on Amazigh identity, civic engagement, women's role in society and environmental responsibility.",
               "Practised intercultural communication and teamwork in a multicultural group, and shared the Tamazight language and culture.",
-              "Certified through Youthpass."]),
+              "Certified through Youthpass."],
+      certificate=dict(pdf="volunteering/youthpass-hand-in-hand-2021.pdf", preview="volunteering/youthpass-hand-in-hand-2021.webp",
+                       label="Youthpass certificate", alt="First page of the Youthpass certificate for the Hand in Hand youth exchange, with the birth date line redacted",
+                       note="Redacted copy: the line with my date and place of birth is removed.")),
  dict(id="amazigh-new-year", role="Active participant", org="Citizenship and Human Rights Education Club, Tarik Ibn Ziyad High School", dates="Jan 2022", cause="Education",
       text="Took an active part in the cultural evening organised to celebrate the Amazigh New Year 2972, promoting Amazigh culture and heritage.",
-      points=[]),
+      points=[],
+      certificate=dict(pdf="volunteering/amazigh-new-year-2022-certificate.pdf", preview="volunteering/amazigh-new-year-2022-certificate.webp",
+                       label="Certificate of appreciation (Arabic)", alt="Certificate of appreciation from the Citizenship and Human Rights Education Club of Tarik Ibn Ziad High School for the Amazigh New Year 2972 evening",
+                       note="")),
 ]
 
 HONORS = [
@@ -470,6 +476,10 @@ for p in P:
         p["cover_w"], p["cover_h"] = S[p["cover"]]
     p.setdefault("results", [])
     p.setdefault("featured", False)
+for v in VOLUNTEERING:
+    c = v.get("certificate")
+    if c:
+        c["w"], c["h"] = S[c["preview"]]
 for h in HACKATHONS:
     h["images"] = [dict(src=i[0], alt=i[1], caption=i[2], w=size(i[0])[0], h=size(i[0])[1]) for i in h["images"]]
     h["files"] = [dict(src=f[0], label=f[1], kind=f[2]) for f in h["files"]]

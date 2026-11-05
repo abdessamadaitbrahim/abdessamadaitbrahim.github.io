@@ -103,12 +103,45 @@
     items.forEach(function (el) { el.classList.add("in"); });
   }
 
-  /* email, assembled in the browser so it is not in the page source */
+  /* email, assembled in the browser so it is not in the page source.
+     A plain mailto: link in the same tab opens the visitor's mail app with a new message. */
+  function address(el) { return el.getAttribute("data-user") + "@" + el.getAttribute("data-domain"); }
   $$("[data-email]").forEach(function (el) {
-    var addr = el.getAttribute("data-user") + "@" + el.getAttribute("data-domain");
-    el.setAttribute("href", "mailto:" + addr);
+    var addr = address(el);
+    el.setAttribute("href", "mailto:" + addr + "?subject=" + encodeURIComponent("Portfolio contact"));
+    el.removeAttribute("target");
+    el.removeAttribute("rel");
     var t = $("[data-email-text]", el);
     if (t) t.textContent = addr;
+  });
+
+  /* "Copy address" fallback for visitors without a mail app */
+  $$("[data-copy-email]").forEach(function (btn) {
+    var addr = address(btn), label = $("span", btn), status = $("[data-copy-status]", btn.parentNode), timer = 0;
+    function done(ok) {
+      label.textContent = ok ? "Copied" : addr;
+      if (status) status.textContent = ok ? "Email address copied to the clipboard" : "Copy failed; the address is " + addr;
+      btn.classList.toggle("is-done", ok);
+      clearTimeout(timer);
+      timer = setTimeout(function () { label.textContent = "Copy address"; btn.classList.remove("is-done"); if (status) status.textContent = ""; }, 2200);
+    }
+    function legacy() {
+      var ta = document.createElement("textarea");
+      ta.value = addr; ta.setAttribute("readonly", ""); ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.select();
+      var ok = false;
+      try { ok = document.execCommand("copy"); } catch (e) {}
+      document.body.removeChild(ta);
+      return ok;
+    }
+    btn.hidden = false;
+    btn.addEventListener("click", function () {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(addr).then(function () { done(true); }, function () { done(legacy()); });
+      } else {
+        done(legacy());
+      }
+    });
   });
 
   /* hero background: a slow point cloud, like points in an embedding space */

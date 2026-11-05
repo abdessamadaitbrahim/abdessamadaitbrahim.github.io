@@ -27,6 +27,7 @@ Other scripts:
 - `python tools/make_og.py`: regenerates the Open Graph image `assets/img/site/og.png` (Pillow).
 - `python tools/make_icons.py`: regenerates the portrait icons (header avatar, `favicon.ico`, 32 / 180 / 512 px PNGs).
 - `python tools/import_incoming.py`: copies the publishable hackathon files from the private, git-ignored
-  `incoming/` folder into `assets/hackathons/` (WebP images including event photos, lighter PDFs; needs Pillow and pypdf).
+  `incoming/` folder into `assets/hackathons/` and `assets/volunteering/` (WebP images including event photos, lighter PDFs,
+  a redacted Youthpass without the birth date and place; needs Pillow and pypdf, plus pypdfium2 for the Youthpass step).
 
 The CV download appears when `assets/cv/Abdessamad_Ait_Brahim_CV.pdf` exists.

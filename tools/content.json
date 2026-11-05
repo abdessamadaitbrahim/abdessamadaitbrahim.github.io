@@ -1201,7 +1201,12 @@
   {
    "id": "ensa-engineering",
    "school": "École Nationale des Sciences Appliquées de Tétouan (ENSA Tétouan)",
-   "logo": true,
+   "logo": {
+    "src": "img/site/ensa-logo.webp",
+    "alt": "ENSA Tétouan logo",
+    "w": 640,
+    "h": 239
+   },
    "degree": "Engineering cycle in Big Data and Artificial Intelligence",
    "dates": "Sep 2024 – Present",
    "detail": "Abdelmalek Essaâdi University. Final year; looking for a 6-month PFE internship starting January 2027.",
@@ -1219,7 +1224,12 @@
   {
    "id": "ensa-prep",
    "school": "ENSA Tétouan",
-   "logo": true,
+   "logo": {
+    "src": "img/site/ensa-logo.webp",
+    "alt": "ENSA Tétouan logo",
+    "w": 640,
+    "h": 239
+   },
    "degree": "Two-year integrated preparatory programme, engineering studies",
    "dates": "2022 – 2024",
    "detail": "Integrated preparatory years for engineering schools.",
@@ -1233,7 +1243,12 @@
   {
    "id": "baccalaureate",
    "school": "Lycée Tarik Ibn Ziad, Kelaat M'Gouna, Tinghir",
-   "logo": false,
+   "logo": {
+    "src": "img/site/lycee-tarik-ibn-ziad.webp",
+    "alt": "Lycee Tarik Ibn Ziad logo",
+    "w": 382,
+    "h": 152
+   },
    "degree": "Scientific Baccalaureate, French option",
    "dates": "2020 – 2022",
    "detail": "",
@@ -1475,7 +1490,16 @@
     "Took part in workshops and debates on Amazigh identity, civic engagement, women's role in society and environmental responsibility.",
     "Practised intercultural communication and teamwork in a multicultural group, and shared the Tamazight language and culture.",
     "Certified through Youthpass."
-   ]
+   ],
+   "certificate": {
+    "pdf": "volunteering/youthpass-hand-in-hand-2021.pdf",
+    "preview": "volunteering/youthpass-hand-in-hand-2021.webp",
+    "label": "Youthpass certificate",
+    "alt": "First page of the Youthpass certificate for the Hand in Hand youth exchange, with the birth date line redacted",
+    "note": "Redacted copy: the line with my date and place of birth is removed.",
+    "w": 900,
+    "h": 1273
+   }
   },
   {
    "id": "amazigh-new-year",
@@ -1484,7 +1508,16 @@
    "dates": "Jan 2022",
    "cause": "Education",
    "text": "Took an active part in the cultural evening organised to celebrate the Amazigh New Year 2972, promoting Amazigh culture and heritage.",
-   "points": []
+   "points": [],
+   "certificate": {
+    "pdf": "volunteering/amazigh-new-year-2022-certificate.pdf",
+    "preview": "volunteering/amazigh-new-year-2022-certificate.webp",
+    "label": "Certificate of appreciation (Arabic)",
+    "alt": "Certificate of appreciation from the Citizenship and Human Rights Education Club of Tarik Ibn Ziad High School for the Amazigh New Year 2972 evening",
+    "note": "",
+    "w": 900,
+    "h": 653
+   }
   }
  ],
  "honors": [

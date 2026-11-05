@@ -50,6 +50,7 @@ ICON = {
  "ext": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>',
  "file": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8l-5-5Z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>',
  "image": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="1"/><circle cx="9" cy="10" r="2"/><path d="m21 17-5-5-9 8"/></svg>',
+ "copy": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="1"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg>',
  "chev": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>',
  "menu": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>',
 }
@@ -144,7 +145,7 @@ def footer(p):
 <div class="foot__nav"><p class="eyebrow">Elsewhere</p><ul>
 <li><a href="{SITE['github']}" rel="me noopener">GitHub</a></li>
 <li><a href="{SITE['linkedin']}" rel="me noopener">LinkedIn</a></li>
-<li><a href="{p}contact.html" data-email data-user="{SITE['email_user']}" data-domain="{SITE['email_domain']}">Email</a></li>
+<li><a href="{p}contact.html#email" data-email data-user="{SITE['email_user']}" data-domain="{SITE['email_domain']}">Email</a></li>
 </ul></div>
 <div class="foot__base"><span>&copy; 2026 {NAME}</span><span>Plain HTML, CSS and JavaScript &middot; GitHub Pages</span><a href="#top">Back to top &uarr;</a></div>
 </div>
@@ -485,7 +486,8 @@ def page_education():
     p = ""
     out, toc = [], []
     for x in D["education"]:
-        logo = img("img/site/ensa-logo.webp", "ENSA Tétouan logo", 640, 239, p, cls="logo") if x["logo"] else ""
+        lg = x.get("logo")
+        logo = img(lg["src"], lg["alt"], lg["w"], lg["h"], p, cls="logo") if lg and (ROOT / "assets" / lg["src"]).exists() else ""
         body = (f'<p>{e(x["detail"])}</p>' if x["detail"] else "") + chips(x["skills"])
         out.append(entry(x["id"], e(x["dates"]), e(x["degree"]), e(x["school"]), body, logo))
         toc.append((x["id"], x["degree"].split(",")[0].replace("Two-year integrated preparatory programme", "Preparatory programme").replace("Engineering cycle in Big Data and Artificial Intelligence", "Engineering cycle")))
@@ -598,12 +600,36 @@ def page_hackathon(i):
 
 
 # --------------------------------------------------------------------------- volunteering / honors
+def file_link(src, label, kind, p):
+    """A document link in the 'files' card style; empty when the file does not exist."""
+    path = ROOT / "assets" / src
+    if not path.exists():
+        return ""
+    kb = path.stat().st_size / 1024
+    sz = f"{kb / 1024:.1f} MB" if kb > 1024 else f"{kb:.0f} KB"
+    ic = ICON["file"] if kind == "PDF" else ICON["image"]
+    return f'<li><a href="{p}assets/{src}" rel="noopener">{ic}<span><b>{e(label)}</b><small>{kind} &middot; {sz}</small></span></a></li>'
+
+
+def certificate(c, p):
+    if not c:
+        return ""
+    link = file_link(c["pdf"], c["label"], "PDF", p)
+    if not link:
+        return ""
+    prev = ""
+    if (ROOT / "assets" / c["preview"]).exists():
+        prev = f'<a class="cert__preview" href="{p}assets/{c["pdf"]}" rel="noopener" tabindex="-1" aria-hidden="true">{img(c["preview"], c["alt"], c["w"], c["h"], p)}</a>'
+    note = f'<p class="note">{e(c["note"])}</p>' if c.get("note") else ""
+    return f'<div class="cert">{prev}<div class="cert__body"><p class="eyebrow">Certificate</p><ul class="files">{link}</ul>{note}</div></div>'
+
+
 def page_volunteering():
     p = ""
     out, toc = [], []
     for x in D["volunteering"]:
         body = f'<p class="entry__lead">{e(x["text"])}</p>{ul(x["points"])}<p class="meta">Cause: {e(x["cause"])}</p>'
-        out.append(entry(x["id"], e(x["dates"]), e(x["role"]), e(x["org"]), body))
+        out.append(entry(x["id"], e(x["dates"]), e(x["role"]), e(x["org"]), body, certificate(x.get("certificate"), p)))
         toc.append((x["id"], x["org"].split(",")[0]))
     desc = "Volunteering of Abdessamad Ait Brahim: Erasmus+ youth exchange Hand in Hand (2021) and the Amazigh New Year cultural evening (2022)."
     return (head(f"Volunteering | {NAME}", desc, "volunteering.html", p, crumbs_ld([("Home", URL + "/"), ("Volunteering", URL + "/volunteering.html")]))
@@ -637,7 +663,7 @@ def page_cv():
                   f'<a class="btn" href="{SITE["cv"]}" rel="noopener">Open in the browser {ICON["ext"]}</a>')
     else:
         action = '<p>The CV is available on request: please use the <a href="contact.html">contact page</a>.</p>'
-    rows = "".join(f'<li><a href="{f}"><b>{lbl}</b><span>{e(d)}</span>{ICON["arrow"]}</a></li>' for k, lbl, f, d in PAGES if k in ("experience", "education", "projects", "about"))
+    rows = "".join(f'<li><a href="{f}"><b>{lbl}</b><span>{e(d)}</span>{ICON["arrow"]}</a></li>' for k, lbl, f, d in PAGES if k in ("experience", "education", "projects", "about", "volunteering"))
     desc = "Download the CV of Abdessamad Ait Brahim, final-year Big Data and AI engineering student at ENSA Tétouan (PDF, English)."
     return (head(f"CV | {NAME}", desc, "cv.html", p, crumbs_ld([("Home", URL + "/"), ("CV", URL + "/cv.html")]))
             + header(p, "cv")
@@ -662,7 +688,11 @@ def page_contact():
             + intro("Contact", "Let&rsquo;s talk", "Open to internships, research and collaboration in AI. The fastest way to reach me is by email or LinkedIn.", crumb_home(p, "Contact"))
             + f'''<div class="container narrow">
 <div class="contact reveal">
-<a class="contact__row" data-email data-user="{SITE['email_user']}" data-domain="{SITE['email_domain']}" href="{SITE['linkedin']}">{ICON['mail']}<span><b>Email</b><small data-email-text>Shown when JavaScript is on, to keep it away from spam bots</small></span>{ICON['arrow']}</a>
+<div class="contact__item" id="email">
+<a class="contact__row" data-email data-user="{SITE['email_user']}" data-domain="{SITE['email_domain']}" href="#email">{ICON['mail']}<span><b>Email</b><small data-email-text>Shown when JavaScript is on, to keep it away from spam bots</small></span>{ICON['arrow']}</a>
+<button class="copy" type="button" data-copy-email data-user="{SITE['email_user']}" data-domain="{SITE['email_domain']}" hidden>{ICON['copy']}<span>Copy address</span></button>
+<span class="sr-only" role="status" aria-live="polite" data-copy-status></span>
+</div>
 <a class="contact__row" href="{SITE['linkedin']}" rel="me noopener">{ICON['linkedin']}<span><b>LinkedIn</b><small>in/abdessamad-aitbrahim</small></span>{ICON['ext']}</a>
 <a class="contact__row" href="{SITE['github']}" rel="me noopener">{ICON['github']}<span><b>GitHub</b><small>@abdessamadaitbrahim</small></span>{ICON['ext']}</a>
 </div>
