@@ -440,6 +440,13 @@ INTERESTS = [
  ("Deep learning", "Architectures built and compared from scratch"),
  ("Multimodal AI", "Vision and language together"),
  ("Big Data", "Streaming, distributed processing, pipelines"),
+ # the three below come only from Heart Guardian, SportLineBot, AMAN (Water4Future) and the STMicroelectronics internship
+ ("AI for signal processing", "ECG and sensor signals: filtering, feature extraction, classification",
+  [("Heart Guardian", "projects/heart-guardian.html")]),
+ ("AI and IoT", "Embedded sensors, ESP32 and real-time dashboards connected to models",
+  [("Heart Guardian", "projects/heart-guardian.html"), ("SportLineBot", "projects/sportlinebot.html"), ("AMAN", "hackathons/water4future-2026.html")]),
+ ("Industrial AI", "Production data, anomaly detection and decision support for industry",
+  [("STMicroelectronics", "experience.html#stmicroelectronics"), ("SportLineBot", "projects/sportlinebot.html"), ("AMAN", "hackathons/water4future-2026.html")]),
 ]
 
 ABOUT = dict(

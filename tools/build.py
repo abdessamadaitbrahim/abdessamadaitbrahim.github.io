@@ -367,7 +367,12 @@ def page_about():
     p = ""
     a = D["about"]
     paras = "".join(f"<p>{e(x)}</p>" for x in a["paragraphs"])
-    interests = "".join(f'<div class="interest reveal"><b>{e(t)}</b><span>{e(s)}</span></div>' for t, s in D["interests"])
+    def interest(t, s, links=()):
+        see = ""
+        if links:
+            see = '<p class="interest__see">See ' + " &middot; ".join(f'<a href="{h}">{e(l)}</a>' for l, h in links) + "</p>"
+        return f'<div class="interest reveal"><b>{e(t)}</b><span>{e(s)}</span>{see}</div>'
+    interests = "".join(interest(*x) for x in D["interests"])
     skills = "".join(f'<div class="skill reveal"><h3>{e(t)}</h3>{chips(items)}</div>' for t, items in D["skills"])
     langs = "".join(
         f'<li class="lang reveal"><b>{e(n)}</b><span class="lvl">{e(l)}</span><span class="dots" aria-hidden="true">' + "".join(f'<i class="{"on" if j < v else ""}"></i>' for j in range(5)) + "</span></li>"
