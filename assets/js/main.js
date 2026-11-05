@@ -116,6 +116,11 @@
     var t = $("[data-email-text]", el);
     if (t) t.textContent = addr;
   });
+  $$("[data-email-outlook]").forEach(function (el) {
+    el.setAttribute("href", "https://outlook.live.com/mail/0/deeplink/compose?to=" + encodeURIComponent(address(el)) + "&subject=" + encodeURIComponent(SUBJECT));
+    el.setAttribute("target", "_blank");
+    el.setAttribute("rel", "noopener noreferrer");
+  });
   $$("[data-email-app]").forEach(function (el) {
     el.setAttribute("href", "mailto:" + address(el) + "?subject=" + encodeURIComponent(SUBJECT));
     el.removeAttribute("target");
@@ -127,7 +132,9 @@
   $$("[data-copy-email]").forEach(function (btn) {
     var addr = address(btn), label = $("span", btn), idle = label.textContent, status = $("[data-copy-status]", btn.closest(".contact__item, .foot__mail") || btn.parentNode), timer = 0;
     function done(ok) {
-      label.textContent = ok ? "Copied" : "Copy failed";
+      /* lock the current width so the "Copied" label never moves the layout */
+      if (!btn.style.width) btn.style.width = btn.getBoundingClientRect().width + "px";
+      label.textContent = ok ? "Copied" : (idle.length > 6 ? "Copy failed" : "Failed");
       if (status) status.textContent = ok ? "Email address copied to the clipboard" : "Copy failed; the address is " + addr;
       btn.classList.toggle("is-done", ok);
       clearTimeout(timer);
