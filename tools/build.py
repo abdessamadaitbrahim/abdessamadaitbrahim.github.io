@@ -116,7 +116,7 @@ def header(p, current):
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
 <div class="container">
-<a class="brand" href="{p}index.html" aria-label="{NAME}, home"><img class="brand__mark" src="{p}assets/img/site/avatar.webp" alt="" width="96" height="96"><span class="brand__name">Abdessamad <em>Ait Brahim</em></span></a>
+<a class="brand" href="{p}index.html" aria-label="{NAME}, home"><img class="brand__mark" src="{p}assets/img/site/abdessamad-prof-96.webp" srcset="{p}assets/img/site/abdessamad-prof-96.webp 1x, {p}assets/img/site/abdessamad-prof-192.webp 2x" alt="Portrait of Abdessamad Ait Brahim" width="36" height="36"><span class="brand__name">Abdessamad <em>Ait Brahim</em></span></a>
 <nav class="nav" id="nav" aria-label="Main">
 {main}
 <div class="nav__more{more_cur}">

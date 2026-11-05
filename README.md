@@ -25,7 +25,7 @@ All HTML pages, `404.html`, `sitemap.xml`, `robots.txt` and `favicon.svg` are ge
 Other scripts:
 
 - `python tools/make_og.py`: regenerates the Open Graph image `assets/img/site/og.png` (Pillow).
-- `python tools/make_icons.py`: regenerates the portrait icons (header avatar, `favicon.ico`, 32 / 180 / 512 px PNGs).
+- `python tools/make_icons.py`: regenerates the header photo (`abdessamad-prof-96/192.webp`) and the circular favicons (`favicon.ico`, 32 / 180 / 512 px PNGs) from `incoming/site/abdessamad-prof.png`.
 - `python tools/import_incoming.py`: copies the publishable hackathon files from the private, git-ignored
   `incoming/` folder into `assets/hackathons/` and `assets/volunteering/` (WebP images including event photos, lighter PDFs,
   a redacted Youthpass without the birth date and place; needs Pillow and pypdf, plus pypdfium2 for the Youthpass step).
