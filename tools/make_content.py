@@ -174,7 +174,7 @@ add(slug="sportlinebot", title="SportLineBot: Field-Marking Robot",
         "Anomaly monitoring with safety rules first (paint empty, obstacle closer than 15 cm, low paint) and an Isolation Forest second.",
         "A mock ESP32 so the dashboard can be tested without the robot."],
  results=["Hackathon prototype at reduced scale; only the football field is implemented and the motion is open loop, so it must be calibrated.",
-          "The team received a certificate of participation at the MECA WORLD CUP, organised by the Club Mécatronique of ENSA Tétouan."],
+          "The team received a certificate of participation at the MECA WORLD CUP, organised by the ENSA Tétouan Mechatronics Club."],
  gallery=[("sportlinebot/dashboard", "SportLineBot dashboard", "Dashboard"), ("sportlinebot/robot", "SportLineBot prototype", "Prototype")])
 
 add(slug="heart-guardian", title="Heart Guardian: ECG-Driven Adaptive Game",
@@ -320,7 +320,7 @@ EXPERIENCE = [
       skills=["Artificial intelligence", "Multilingual NLP", "Agile methodology"]),
  dict(id="math-instructor", role="Mathematics Instructor", org="Self-employed", kind="Freelance",
       dates="Jan 2025 – Jun 2025", length="6 months", place="Tétouan, Morocco · Hybrid",
-      summary="Private mathematics tutoring for high school students (Tronc Commun, 1st and 2nd year Baccalaureate, Moroccan curriculum).",
+      summary="Private mathematics tutoring for high school students (Common Core, 1st and 2nd year Baccalaureate, Moroccan curriculum).",
       points=["Core concepts: algebra, functions, analysis and geometry.",
               "Exercises and exam preparation, with lessons adapted to each student's level."],
       skills=["Mathematics", "Teaching", "Tutoring", "Communication", "Time management"]),
@@ -328,16 +328,16 @@ EXPERIENCE = [
 
 # --------------------------------------------------------------------------- education (LinkedIn dates)
 EDUCATION = [
- dict(id="ensa-engineering", school="École Nationale des Sciences Appliquées de Tétouan (ENSA Tétouan)", logo=dict(src="img/site/ensa-logo.webp", alt="ENSA Tétouan logo", w=640, h=239),
+ dict(id="ensa-engineering", school="ENSA Tétouan, Abdelmalek Essaadi University", logo=dict(src="img/site/ensa-logo.webp", alt="ENSA Tétouan logo", w=640, h=239),
       degree="Engineering cycle in Big Data and Artificial Intelligence", dates="Sep 2024 – Present",
-      detail="Abdelmalek Essaâdi University. Final year; looking for a 6-month PFE internship starting January 2027.",
+      detail="Final year; looking for a 6-month PFE internship starting January 2027.",
       skills=["Python", "SQL", "Machine learning", "Deep learning", "Data visualisation", "Agile management", "Trello", "Project management"]),
  dict(id="ensa-prep", school="ENSA Tétouan", logo=dict(src="img/site/ensa-logo.webp", alt="ENSA Tétouan logo", w=640, h=239),
-      degree="Two-year integrated preparatory programme, engineering studies", dates="2022 – 2024",
-      detail="Integrated preparatory years for engineering schools.",
+      degree="Integrated preparatory program (two years), engineering studies", dates="2022 – 2024",
+      detail="Integrated preparatory program for engineering schools, Abdelmalek Essaadi University.",
       skills=["Mathematics", "Statistics", "Probability", "Algebra"]),
- dict(id="baccalaureate", school="Lycée Tarik Ibn Ziad, Kelaat M'Gouna, Tinghir", logo=dict(src="img/site/lycee-tarik-ibn-ziad.webp", alt="Lycee Tarik Ibn Ziad logo", w=382, h=152),
-      degree="Scientific Baccalaureate, French option", dates="2020 – 2022",
+ dict(id="baccalaureate", school="Tarik Ibn Ziad High School, Kelaat M'Gouna, Tinghir", logo=dict(src="img/site/lycee-tarik-ibn-ziad.webp", alt="Tarik Ibn Ziad High School logo", w=382, h=152),
+      degree="Scientific Baccalaureate (French option)", dates="2020 – 2022",
       detail="",
       skills=["Public speaking", "Event presentation", "Teamwork", "Academic competitions"]),
 ]
@@ -383,10 +383,10 @@ HACKATHONS = [
              ("hackathons/game4health-2026/heart-guardian-presentation.pdf", "Heart Guardian pitch presentation (French)", "PDF")]),
  dict(slug="meca-world-cup-2026", title="MECA WORLD CUP 2026", short="MECA WORLD CUP 2026",
       date="May 2026", month="May 2026", place="", start="2026-05", end="2026-05",
-      org="Club Mécatronique, ENSA Tétouan", team="With Abdelaaziz Ait Kheri (mechatronics)",
+      org="ENSA Tétouan Mechatronics Club", team="With Abdelaaziz Ait Kheri (mechatronics)",
       result="Participant, certificate of participation",
       summary="A national robotics competition. With a mechatronics teammate, I built SportLineBot, an autonomous robot that paints sports field lines from natural-language commands.",
-      description=["MECA WORLD CUP 2026 is a national robotics competition organised by the Club Mécatronique of ENSA Tétouan.",
+      description=["MECA WORLD CUP 2026 is a national robotics competition organised by the ENSA Tétouan Mechatronics Club.",
                    "With Abdelaaziz Ait Kheri (mechatronics engineering), I presented SportLineBot, an autonomous robot that paints sports field lines (football, basketball, tennis, handball) from natural-language commands. I developed the AI part."],
       built=["An NLP module (TF-IDF and Naive Bayes, about 90% accuracy) that turns French sentences into robot commands.",
              "An Isolation Forest module for real-time anomaly detection: obstacles, empty paint tank, blocked robot.",
@@ -396,7 +396,7 @@ HACKATHONS = [
               ("hackathons/meca-world-cup-2026/presenting-sportlinebot.webp", "Abdessamad Ait Brahim presenting SportLineBot with a microphone", "Presenting SportLineBot"),
               ("hackathons/meca-world-cup-2026/robot-prototype.webp", "SportLineBot robot prototype with its paint tank, ESP32 board and ultrasonic sensor", "SportLineBot prototype"),
               ("hackathons/meca-world-cup-2026/user-manual-cover.webp", "Cover of the SportLineBot user manual", "User manual cover"),
-              ("hackathons/meca-world-cup-2026/certificate-of-participation.webp", "MECA WORLD CUP 2026 certificate of participation, Club Mécatronique", "Certificate of participation")],
+              ("hackathons/meca-world-cup-2026/certificate-of-participation.webp", "MECA WORLD CUP 2026 certificate of participation, ENSA Tétouan Mechatronics Club", "Certificate of participation")],
       files=[("hackathons/meca-world-cup-2026/certificate-of-participation.webp", "Certificate of participation", "Image"),
              ("hackathons/meca-world-cup-2026/sportlinebot-presentation.pdf", "SportLineBot presentation (French)", "PDF")]),
 ]
@@ -412,7 +412,7 @@ VOLUNTEERING = [
       certificate=dict(pdf="volunteering/youthpass-hand-in-hand-2021.pdf", preview="volunteering/youthpass-hand-in-hand-2021.webp",
                        label="Youthpass certificate", alt="First page of the Youthpass certificate for the Hand in Hand youth exchange, with the birth date line redacted",
                        note="Redacted copy: the line with my date and place of birth is removed.")),
- dict(id="amazigh-new-year", role="Active participant", org="Citizenship and Human Rights Education Club, Tarik Ibn Ziyad High School", dates="Jan 2022", cause="Education",
+ dict(id="amazigh-new-year", role="Active participant", org="Citizenship and Human Rights Education Club, Tarik Ibn Ziad High School", dates="Jan 2022", cause="Education",
       text="Took an active part in the cultural evening organised to celebrate the Amazigh New Year 2972, promoting Amazigh culture and heritage.",
       points=[],
       certificate=dict(pdf="volunteering/amazigh-new-year-2022-certificate.pdf", preview="volunteering/amazigh-new-year-2022-certificate.webp",
@@ -428,7 +428,7 @@ HONORS = [
       issuer="SmartTech Lab, iSMAGI, Rabat", date="Apr 2026", hackathon="game4health-2026",
       text="Finalist team Health Hackers with Heart Guardian, an adaptive health game using an ECG sensor and AI analysis of the heart rhythm."),
  dict(title="Participant, SportLineBot", event="MECA WORLD CUP 2026, national robotics competition",
-      issuer="Club Mécatronique, ENSA Tétouan", date="May 2026", hackathon="meca-world-cup-2026",
+      issuer="ENSA Tétouan Mechatronics Club", date="May 2026", hackathon="meca-world-cup-2026",
       text="Autonomous sports field line-marking robot built with Abdelaaziz Ait Kheri; I developed the NLP command module and the anomaly detection."),
 ]
 
@@ -469,7 +469,7 @@ INTERESTS = [
 
 ABOUT = dict(
  short="Final-year engineering student in Big Data and Artificial Intelligence at ENSA Tétouan, Morocco. I build reliable, data-driven AI systems and care about careful experiments and honest evaluation.",
- paragraphs=["I am a final-year engineering student in Big Data and Artificial Intelligence at ENSA Tétouan (Abdelmalek Essaâdi University), Morocco.",
+ paragraphs=["I am a final-year engineering student in Big Data and Artificial Intelligence at ENSA Tétouan, Abdelmalek Essaadi University, Morocco.",
              "My interests are machine learning, deep learning, computer vision, NLP and multimodal AI, with a focus on building reliable, data-driven solutions through careful experimentation and evaluation. I enjoy exploring AI research as well as real-world applications in scientific and industrial settings.",
              "I am looking for a 6-month PFE internship starting in January 2027, with a long-term goal of pursuing a PhD in AI."],
  quote="Everything will come in its time, right and fittingly.",

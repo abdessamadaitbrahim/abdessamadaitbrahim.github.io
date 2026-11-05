@@ -11,7 +11,7 @@
  "about": {
   "short": "Final-year engineering student in Big Data and Artificial Intelligence at ENSA Tétouan, Morocco. I build reliable, data-driven AI systems and care about careful experiments and honest evaluation.",
   "paragraphs": [
-   "I am a final-year engineering student in Big Data and Artificial Intelligence at ENSA Tétouan (Abdelmalek Essaâdi University), Morocco.",
+   "I am a final-year engineering student in Big Data and Artificial Intelligence at ENSA Tétouan, Abdelmalek Essaadi University, Morocco.",
    "My interests are machine learning, deep learning, computer vision, NLP and multimodal AI, with a focus on building reliable, data-driven solutions through careful experimentation and evaluation. I enjoy exploring AI research as well as real-world applications in scientific and industrial settings.",
    "I am looking for a 6-month PFE internship starting in January 2027, with a long-term goal of pursuing a PhD in AI."
   ],
@@ -835,7 +835,7 @@
    ],
    "results": [
     "Hackathon prototype at reduced scale; only the football field is implemented and the motion is open loop, so it must be calibrated.",
-    "The team received a certificate of participation at the MECA WORLD CUP, organised by the Club Mécatronique of ENSA Tétouan."
+    "The team received a certificate of participation at the MECA WORLD CUP, organised by the ENSA Tétouan Mechatronics Club."
    ],
    "gallery": [
     {
@@ -1311,7 +1311,7 @@
    "dates": "Jan 2025 – Jun 2025",
    "length": "6 months",
    "place": "Tétouan, Morocco · Hybrid",
-   "summary": "Private mathematics tutoring for high school students (Tronc Commun, 1st and 2nd year Baccalaureate, Moroccan curriculum).",
+   "summary": "Private mathematics tutoring for high school students (Common Core, 1st and 2nd year Baccalaureate, Moroccan curriculum).",
    "points": [
     "Core concepts: algebra, functions, analysis and geometry.",
     "Exercises and exam preparation, with lessons adapted to each student's level."
@@ -1328,7 +1328,7 @@
  "education": [
   {
    "id": "ensa-engineering",
-   "school": "École Nationale des Sciences Appliquées de Tétouan (ENSA Tétouan)",
+   "school": "ENSA Tétouan, Abdelmalek Essaadi University",
    "logo": {
     "src": "img/site/ensa-logo.webp",
     "alt": "ENSA Tétouan logo",
@@ -1337,7 +1337,7 @@
    },
    "degree": "Engineering cycle in Big Data and Artificial Intelligence",
    "dates": "Sep 2024 – Present",
-   "detail": "Abdelmalek Essaâdi University. Final year; looking for a 6-month PFE internship starting January 2027.",
+   "detail": "Final year; looking for a 6-month PFE internship starting January 2027.",
    "skills": [
     "Python",
     "SQL",
@@ -1358,9 +1358,9 @@
     "w": 640,
     "h": 239
    },
-   "degree": "Two-year integrated preparatory programme, engineering studies",
+   "degree": "Integrated preparatory program (two years), engineering studies",
    "dates": "2022 – 2024",
-   "detail": "Integrated preparatory years for engineering schools.",
+   "detail": "Integrated preparatory program for engineering schools, Abdelmalek Essaadi University.",
    "skills": [
     "Mathematics",
     "Statistics",
@@ -1370,14 +1370,14 @@
   },
   {
    "id": "baccalaureate",
-   "school": "Lycée Tarik Ibn Ziad, Kelaat M'Gouna, Tinghir",
+   "school": "Tarik Ibn Ziad High School, Kelaat M'Gouna, Tinghir",
    "logo": {
     "src": "img/site/lycee-tarik-ibn-ziad.webp",
-    "alt": "Lycee Tarik Ibn Ziad logo",
+    "alt": "Tarik Ibn Ziad High School logo",
     "w": 382,
     "h": 152
    },
-   "degree": "Scientific Baccalaureate, French option",
+   "degree": "Scientific Baccalaureate (French option)",
    "dates": "2020 – 2022",
    "detail": "",
    "skills": [
@@ -1539,12 +1539,12 @@
    "place": "",
    "start": "2026-05",
    "end": "2026-05",
-   "org": "Club Mécatronique, ENSA Tétouan",
+   "org": "ENSA Tétouan Mechatronics Club",
    "team": "With Abdelaaziz Ait Kheri (mechatronics)",
    "result": "Participant, certificate of participation",
    "summary": "A national robotics competition. With a mechatronics teammate, I built SportLineBot, an autonomous robot that paints sports field lines from natural-language commands.",
    "description": [
-    "MECA WORLD CUP 2026 is a national robotics competition organised by the Club Mécatronique of ENSA Tétouan.",
+    "MECA WORLD CUP 2026 is a national robotics competition organised by the ENSA Tétouan Mechatronics Club.",
     "With Abdelaaziz Ait Kheri (mechatronics engineering), I presented SportLineBot, an autonomous robot that paints sports field lines (football, basketball, tennis, handball) from natural-language commands. I developed the AI part."
    ],
    "built": [
@@ -1585,7 +1585,7 @@
     },
     {
      "src": "hackathons/meca-world-cup-2026/certificate-of-participation.webp",
-     "alt": "MECA WORLD CUP 2026 certificate of participation, Club Mécatronique",
+     "alt": "MECA WORLD CUP 2026 certificate of participation, ENSA Tétouan Mechatronics Club",
      "caption": "Certificate of participation",
      "w": 509,
      "h": 379
@@ -1632,7 +1632,7 @@
   {
    "id": "amazigh-new-year",
    "role": "Active participant",
-   "org": "Citizenship and Human Rights Education Club, Tarik Ibn Ziyad High School",
+   "org": "Citizenship and Human Rights Education Club, Tarik Ibn Ziad High School",
    "dates": "Jan 2022",
    "cause": "Education",
    "text": "Took an active part in the cultural evening organised to celebrate the Amazigh New Year 2972, promoting Amazigh culture and heritage.",
@@ -1668,7 +1668,7 @@
   {
    "title": "Participant, SportLineBot",
    "event": "MECA WORLD CUP 2026, national robotics competition",
-   "issuer": "Club Mécatronique, ENSA Tétouan",
+   "issuer": "ENSA Tétouan Mechatronics Club",
    "date": "May 2026",
    "hackathon": "meca-world-cup-2026",
    "text": "Autonomous sports field line-marking robot built with Abdelaaziz Ait Kheri; I developed the NLP command module and the anomaly detection."

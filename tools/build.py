@@ -230,9 +230,37 @@ def chips(items, n=None):
     return '<ul class="chips">' + "".join(f'<li class="chip">{e(s)}</li>' for s in items) + "</ul>"
 
 
+SCHOOL_SHORT = "ENSA Tétouan"
+SCHOOL_FULL = "National School of Applied Sciences of Tétouan"
+
+
+def expand_school(html):
+    """Use the full English school name the first time it appears in a page's main content,
+    then the short form. Skips attributes, mono eyebrow labels, the header and the footer."""
+    start, end = html.find('<main id="main">'), html.find("</main>")
+    if start < 0 or end < 0:
+        return html
+    pos = start
+    while True:
+        i = html.find(SCHOOL_SHORT, pos, end)
+        if i < 0 or SCHOOL_FULL in html[start:i]:
+            return html
+        in_tag = html.rfind("<", start, i) > html.rfind(">", start, i)
+        last_eyebrow = html.rfind('class="eyebrow', start, i)
+        in_eyebrow = last_eyebrow > html.rfind("</p>", start, i)
+        is_club = html.startswith(" Mechatronics Club", i + len(SCHOOL_SHORT))
+        if not in_tag and not in_eyebrow and not is_club:
+            before = html[max(start, i - 14):i].lower()
+            the = "the " if before.endswith(("at ", "by ", "of ", "in ", "from ", "representing ")) else ""
+            return html[:i] + f"{the}{SCHOOL_FULL} ({SCHOOL_SHORT})" + html[i + len(SCHOOL_SHORT):]
+        pos = i + len(SCHOOL_SHORT)
+
+
 def write(path, html):
     out = ROOT / path
     out.parent.mkdir(parents=True, exist_ok=True)
+    if path.endswith(".html"):
+        html = expand_school(html)
     out.write_text(html, encoding="utf-8")
 
 
@@ -299,7 +327,8 @@ def page_index():
     person = {"@context": "https://schema.org", "@type": "Person", "name": NAME, "url": URL + "/",
               "image": URL + "/assets/img/site/portrait.webp",
               "jobTitle": "Big Data and Artificial Intelligence engineering student",
-              "alumniOf": {"@type": "CollegeOrUniversity", "name": "ENSA Tétouan, Abdelmalek Essaâdi University"},
+              "alumniOf": {"@type": "CollegeOrUniversity", "name": "National School of Applied Sciences of Tétouan (ENSA Tétouan)", "alternateName": "ENSA Tétouan",
+                           "parentOrganization": {"@type": "CollegeOrUniversity", "name": "Abdelmalek Essaadi University"}},
               "knowsAbout": ["Machine learning", "Deep learning", "Computer vision", "Natural language processing", "Big Data"],
               "knowsLanguage": [l[0] for l in D["languages"]],
               "award": [f'{h["title"]}, {h["event"]}' for h in D["honors"]],
@@ -511,11 +540,11 @@ def page_education():
         logo = img(lg["src"], lg["alt"], lg["w"], lg["h"], p, cls="logo") if lg and (ROOT / "assets" / lg["src"]).exists() else ""
         body = (f'<p>{e(x["detail"])}</p>' if x["detail"] else "") + chips(x["skills"])
         out.append(entry(x["id"], e(x["dates"]), e(x["degree"]), e(x["school"]), body, logo))
-        toc.append((x["id"], x["degree"].split(",")[0].replace("Two-year integrated preparatory programme", "Preparatory programme").replace("Engineering cycle in Big Data and Artificial Intelligence", "Engineering cycle")))
+        toc.append((x["id"], x["degree"].split(",")[0].replace("Integrated preparatory program (two years)", "Preparatory program").replace("Engineering cycle in Big Data and Artificial Intelligence", "Engineering cycle")))
     desc = "Education of Abdessamad Ait Brahim: engineering cycle in Big Data and AI at ENSA Tétouan, integrated preparatory programme and scientific baccalaureate."
     return (head(f"Education | {NAME}", desc, "education.html", p, crumbs_ld([("Home", URL + "/"), ("Education", URL + "/education.html")]))
             + header(p, "education")
-            + intro("Education", "From the baccalaureate to Big Data and AI", "Five years at ENSA Tétouan, Abdelmalek Essaâdi University: two integrated preparatory years, then the engineering cycle in Big Data and Artificial Intelligence.", crumb_home(p, "Education"))
+            + intro("Education", "From the baccalaureate to Big Data and AI", "Five years at ENSA Tétouan, Abdelmalek Essaadi University: the integrated preparatory program, then the engineering cycle in Big Data and Artificial Intelligence.", crumb_home(p, "Education"))
             + with_toc(toc, f'<div class="entries">{"".join(out)}</div>') + seq_pager("education") + footer(p))
 
 
@@ -563,7 +592,7 @@ def page_hackathons():
     desc = "Hackathons and competitions of Abdessamad Ait Brahim in 2026: Water4Future (Montpellier), Game4Health (Rabat) and MECA WORLD CUP."
     return (head(f"Hackathons | {NAME}", desc, "hackathons.html", p, crumbs_ld([("Home", URL + "/"), ("Hackathons", URL + "/hackathons.html")]))
             + header(p, "hackathons")
-            + intro("Hackathons", "Three competitions in 2026", "Short, intense projects built in a team: water and agriculture in Montpellier, games for health in Rabat, and a robotics competition at ENSA Tétouan&rsquo;s mechatronics club.", crumb_home(p, "Hackathons"))
+            + intro("Hackathons", "Three competitions in 2026", "Short, intense projects built in a team: water and agriculture in Montpellier, games for health in Rabat, and a robotics competition run by the ENSA Tétouan Mechatronics Club.", crumb_home(p, "Hackathons"))
             + with_toc(toc, f'<div class="hcards">{cards}</div>') + seq_pager("hackathons") + footer(p))
 
 
