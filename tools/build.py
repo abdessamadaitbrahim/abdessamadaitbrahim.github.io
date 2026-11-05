@@ -145,9 +145,9 @@ def footer(p):
 <div class="foot__nav"><p class="eyebrow">Elsewhere</p><ul>
 <li><a href="{SITE['github']}" rel="me noopener">GitHub</a></li>
 <li><a href="{SITE['linkedin']}" rel="me noopener">LinkedIn</a></li>
-<li><a href="{p}contact.html#email" data-email data-user="{SITE['email_user']}" data-domain="{SITE['email_domain']}">Email</a></li>
+<li class="foot__mail"><a href="{p}contact.html#email" data-email data-user="{SITE['email_user']}" data-domain="{SITE['email_domain']}">Email</a><button class="copy copy--sm" type="button" data-copy-email data-user="{SITE['email_user']}" data-domain="{SITE['email_domain']}" aria-label="Copy email address" hidden>{ICON['copy']}<span>Copy</span></button><span class="sr-only" role="status" aria-live="polite" data-copy-status></span></li>
 </ul></div>
-<div class="foot__base"><span>&copy; 2026 {NAME}</span><span>Plain HTML, CSS and JavaScript &middot; GitHub Pages</span><a href="#top">Back to top &uarr;</a></div>
+<div class="foot__base"><span>&copy; 2026 {NAME}</span><span class="foot__motto">{e(D["about"]["quote"])}</span><a href="#top">Back to top &uarr;</a></div>
 </div>
 </footer>
 <script src="{p}assets/js/main.js" defer></script>
@@ -691,7 +691,7 @@ def page_contact():
 <div class="contact__item" id="email">
 <a class="contact__row" data-email data-user="{SITE['email_user']}" data-domain="{SITE['email_domain']}" href="#email">{ICON['mail']}<span><b>Email</b><small data-email-text>Shown when JavaScript is on, to keep it away from spam bots</small></span>{ICON['ext']}</a>
 <div class="contact__alt">
-<button class="copy" type="button" data-copy-email data-user="{SITE['email_user']}" data-domain="{SITE['email_domain']}" hidden>{ICON['copy']}<span>Copy address</span></button>
+<button class="copy" type="button" data-copy-email data-user="{SITE['email_user']}" data-domain="{SITE['email_domain']}" aria-label="Copy email address" hidden>{ICON['copy']}<span>Copy address</span></button>
 <a class="copy" href="#email" data-email-app data-user="{SITE['email_user']}" data-domain="{SITE['email_domain']}" hidden>{ICON['mail']}<span>Open in mail app</span></a>
 </div>
 <span class="sr-only" role="status" aria-live="polite" data-copy-status></span>
@@ -699,7 +699,7 @@ def page_contact():
 <a class="contact__row" href="{SITE['linkedin']}" rel="me noopener">{ICON['linkedin']}<span><b>LinkedIn</b><small>in/abdessamad-aitbrahim</small></span>{ICON['ext']}</a>
 <a class="contact__row" href="{SITE['github']}" rel="me noopener">{ICON['github']}<span><b>GitHub</b><small>@abdessamadaitbrahim</small></span>{ICON['ext']}</a>
 </div>
-<p class="note">Based in Morocco, open to international opportunities. I usually reply within a few days.</p>
+<p class="note">Open to international opportunities.</p>
 </div>''' + seq_pager("contact") + footer(p))
 
 

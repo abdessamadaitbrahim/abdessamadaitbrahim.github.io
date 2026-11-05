@@ -1,6 +1,6 @@
 # abdessamadaitbrahim.github.io
 
-Personal portfolio of Abdessamad Ait Brahim. Plain HTML, CSS and JavaScript, no framework, hosted on GitHub Pages.
+Personal portfolio of Abdessamad Ait Brahim: a static site in HTML, CSS and JavaScript, with no framework, hosted on GitHub Pages.
 
 ## Structure
 

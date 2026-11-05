@@ -298,6 +298,10 @@ section.block{padding-block:52px 12px}
 .copy:hover{border-color:var(--accent);color:var(--accent)}
 .copy svg{width:15px;height:15px}
 .copy.is-done{border-color:var(--sage);color:var(--sage)}
+.foot__mail{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.copy--sm{padding:4px 8px;gap:5px;font-size:.66rem;background:transparent}
+.copy--sm svg{width:12px;height:12px}
+.foot__motto{font-style:italic}
 .contact__row b{display:block;font:400 1.5rem/1.2 var(--serif)}
 .contact__row small{display:block;font:500 .76rem/1.4 var(--mono);color:var(--muted);overflow-wrap:anywhere;margin-top:4px}
 

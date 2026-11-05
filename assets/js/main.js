@@ -125,13 +125,13 @@
 
   /* "Copy address" fallback for visitors without a mail app */
   $$("[data-copy-email]").forEach(function (btn) {
-    var addr = address(btn), label = $("span", btn), status = $("[data-copy-status]", btn.closest(".contact__item") || btn.parentNode), timer = 0;
+    var addr = address(btn), label = $("span", btn), idle = label.textContent, status = $("[data-copy-status]", btn.closest(".contact__item, .foot__mail") || btn.parentNode), timer = 0;
     function done(ok) {
-      label.textContent = ok ? "Copied" : addr;
+      label.textContent = ok ? "Copied" : "Copy failed";
       if (status) status.textContent = ok ? "Email address copied to the clipboard" : "Copy failed; the address is " + addr;
       btn.classList.toggle("is-done", ok);
       clearTimeout(timer);
-      timer = setTimeout(function () { label.textContent = "Copy address"; btn.classList.remove("is-done"); if (status) status.textContent = ""; }, 2200);
+      timer = setTimeout(function () { label.textContent = idle; btn.classList.remove("is-done"); if (status) status.textContent = ""; }, 2200);
     }
     function legacy() {
       var ta = document.createElement("textarea");
