@@ -1,0 +1,10 @@
+# Private source material: never committed
+incoming/
+
+# Python
+__pycache__/
+*.pyc
+
+# Local test output
+.playwright/
+test-results/

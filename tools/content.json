@@ -5,12 +5,186 @@
   "github": "https://github.com/abdessamadaitbrahim",
   "linkedin": "https://www.linkedin.com/in/abdessamad-aitbrahim/",
   "email_user": "abdessamadaitbrahim9",
-  "email_domain": "gmail.com"
+  "email_domain": "gmail.com",
+  "cv": "assets/cv/Abdessamad_Ait_Brahim_CV.pdf"
  },
+ "about": {
+  "short": "Final-year engineering student in Big Data and Artificial Intelligence at ENSA Tétouan, Morocco. I build reliable, data-driven AI systems and care about careful experiments and honest evaluation.",
+  "paragraphs": [
+   "I am a final-year engineering student in Big Data and Artificial Intelligence at ENSA Tétouan (Abdelmalek Essaâdi University), Morocco.",
+   "My interests are machine learning, deep learning, computer vision, NLP and multimodal AI, with a focus on building reliable, data-driven solutions through careful experimentation and evaluation. I enjoy exploring AI research as well as real-world applications in scientific and industrial settings.",
+   "I am looking for a 6-month PFE internship starting in January 2027, with a long-term goal of pursuing a PhD in AI."
+  ],
+  "quote": "Everything will come in its time, right and fittingly.",
+  "facts": [
+   [
+    "Studying",
+    "Big Data & AI engineering, ENSA Tétouan"
+   ],
+   [
+    "Looking for",
+    "6-month PFE internship, January 2027"
+   ],
+   [
+    "Long-term goal",
+    "PhD in AI"
+   ],
+   [
+    "Based in",
+    "Morocco"
+   ]
+  ]
+ },
+ "interests": [
+  [
+   "Natural language processing",
+   "Transformers, multilingual and low-resource text"
+  ],
+  [
+   "Computer vision",
+   "Detection, recognition, image captioning"
+  ],
+  [
+   "Deep learning",
+   "Architectures built and compared from scratch"
+  ],
+  [
+   "Multimodal AI",
+   "Vision and language together"
+  ],
+  [
+   "Big Data",
+   "Streaming, distributed processing, pipelines"
+  ]
+ ],
+ "skills": [
+  [
+   "Machine learning and deep learning",
+   [
+    "PyTorch",
+    "TensorFlow",
+    "scikit-learn",
+    "XGBoost",
+    "Pandas",
+    "NumPy",
+    "Isolation Forest",
+    "Reinforcement learning"
+   ]
+  ],
+  [
+   "NLP and LLMs",
+   [
+    "Hugging Face",
+    "Transformers",
+    "XLM-RoBERTa",
+    "BERT fine-tuning",
+    "LLM applications",
+    "Prompt engineering",
+    "Dify",
+    "TF-IDF"
+   ]
+  ],
+  [
+   "Computer vision",
+   [
+    "OpenCV",
+    "YOLOv8",
+    "CNN: VGG, ResNet",
+    "Image captioning",
+    "BLIP"
+   ]
+  ],
+  [
+   "Big Data",
+   [
+    "Apache Spark",
+    "PySpark",
+    "Apache Kafka",
+    "Hadoop MapReduce",
+    "MongoDB",
+    "ETL / ELT"
+   ]
+  ],
+  [
+   "Languages and databases",
+   [
+    "Python",
+    "C++",
+    "SQL",
+    "T-SQL",
+    "PostgreSQL",
+    "MySQL",
+    "MariaDB",
+    "SQL Server",
+    "SQLite"
+   ]
+  ],
+  [
+   "Data visualisation and BI",
+   [
+    "Power BI",
+    "Tableau",
+    "SSIS",
+    "SSAS",
+    "Streamlit",
+    "Matplotlib"
+   ]
+  ],
+  [
+   "Backend and tools",
+   [
+    "Flask",
+    "FastAPI",
+    "REST APIs",
+    "Docker",
+    "Git and GitHub",
+    "Linux",
+    "AWS (EC2, S3)",
+    "SciPy"
+   ]
+  ],
+  [
+   "Embedded and IoT",
+   [
+    "ESP32",
+    "Arduino",
+    "WebSocket",
+    "Signal processing"
+   ]
+  ]
+ ],
+ "languages": [
+  [
+   "Tamazight",
+   "Native or bilingual proficiency",
+   5
+  ],
+  [
+   "Arabic",
+   "Professional working proficiency",
+   4
+  ],
+  [
+   "French",
+   "Professional working proficiency",
+   4
+  ],
+  [
+   "English",
+   "Professional working proficiency",
+   4
+  ],
+  [
+   "Spanish",
+   "Elementary proficiency",
+   1
+  ]
+ ],
  "projects": [
   {
    "slug": "botground",
    "title": "Botground: Multilingual Sentiment Analysis",
+   "featured": true,
    "short": "Sentiment analysis of chatbot conversations in French, English and Moroccan Darija, with fine-tuned transformers and a Flask dashboard.",
    "cats": [
     "nlp",
@@ -28,8 +202,8 @@
    "cover": "botground/dashboard",
    "cover_fit": "cover",
    "repo": "https://github.com/abdessamadaitbrahim/botground-multilingual-sentiment-analysis",
-   "detail": true,
-   "context": "Internship project",
+   "context": "Internship project, Labex",
+   "experience": "labex-botground",
    "problem": "Customer conversations handled by a chatbot arrive in French, English and Moroccan Darija written in Latin letters. Darija has no standard spelling, uses numbers as letters (3, 7), mixes with French in the same message and has few labelled resources. The goal was to score messages and whole conversations and to track customer satisfaction.",
    "built": [
     "Fine-tuned and compared three multilingual transformers on 4,199 labelled messages: XLM-RoBERTa base, mBERT and DarijaBERT, all with the same training setup (3 epochs, batch size 16, early stopping on macro F1).",
@@ -78,6 +252,7 @@
   {
    "slug": "emotion-recognition",
    "title": "Facial Emotion Recognition: VGG vs ResNet",
+   "featured": true,
    "short": "VGG and ResNet built from scratch in PyTorch on 49,779 face images. ResNet reaches 75.4% test accuracy with 34 times fewer parameters.",
    "cats": [
     "vision",
@@ -93,7 +268,6 @@
    "cover": "emotion/models",
    "cover_fit": "contain",
    "repo": "https://github.com/abdessamadaitbrahim/deep-learning-facial-emotion-recognition",
-   "detail": true,
    "context": "Deep learning project",
    "problem": "Classify a face image into one of seven emotions (angry, disgust, fear, happy, neutral, sad, surprise). The aim is a fair architectural comparison: both networks are trained from scratch, with no pretrained weights, using exactly the same split, augmentation, optimizer, scheduler and number of epochs.",
    "built": [
@@ -136,6 +310,7 @@
   {
    "slug": "vision-vocab-tutor",
    "title": "Vision Vocab Tutor",
+   "featured": true,
    "short": "Learn English vocabulary from images: YOLOv8 reads the picture, a vision LLM writes the quiz, spaced repetition schedules the review.",
    "cats": [
     "vision",
@@ -152,7 +327,6 @@
    "cover": "vocab/home",
    "cover_fit": "cover",
    "repo": "https://github.com/abdessamadaitbrahim/vision-vocab-tutor",
-   "detail": true,
    "context": "Web application",
    "problem": "Vocabulary is easier to remember when it is tied to what the learner can see. The application turns real-world photos into quizzes whose questions are about what is actually visible, and it brings back the words the learner gets wrong at the right time.",
    "built": [
@@ -215,7 +389,6 @@
    "cover": "captioning/app",
    "cover_fit": "cover",
    "repo": "https://github.com/abdessamadaitbrahim/Deep-Learning-Based-Image-Captioning-Using-Flickr30K",
-   "detail": true,
    "context": "Machine learning project, ENSA Tétouan, 2024-2025",
    "problem": "Generate a natural-language description of an image. The project compares encoder-decoder families on the Flickr30k dataset, from CNN with recurrent decoders to a Transformer decoder and the pretrained BLIP vision-language model.",
    "built": [
@@ -258,7 +431,8 @@
     }
    ],
    "cover_w": 1400,
-   "cover_h": 707
+   "cover_h": 707,
+   "featured": false
   },
   {
    "slug": "ctr-prediction",
@@ -276,7 +450,6 @@
    "cover": "ctr/models",
    "cover_fit": "contain",
    "repo": "https://github.com/abdessamadaitbrahim/ctr-prediction-ml-from-scratch",
-   "detail": true,
    "context": "Academic project, ENSA Tétouan",
    "problem": "Predict whether a user clicks an online advertisement from demographic, behavioural and contextual features. The point of the project is to understand the mathematics of four classical algorithms by implementing them without a machine-learning library.",
    "built": [
@@ -313,7 +486,8 @@
     }
    ],
    "cover_w": 790,
-   "cover_h": 590
+   "cover_h": 590,
+   "featured": false
   },
   {
    "slug": "cliffwalking",
@@ -331,7 +505,6 @@
    "cover": "cliffwalking/comparison",
    "cover_fit": "contain",
    "repo": "https://github.com/abdessamadaitbrahim/cliffwalking-value-vs-policy-iteration",
-   "detail": true,
    "context": "Deep learning module lab, ENSA Tétouan, 2024-2025",
    "problem": "Compare two dynamic-programming algorithms for optimal decision-making on the 4 x 12 CliffWalking-v1 grid from Gymnasium: how fast each converges and whether they reach the same policy.",
    "built": [
@@ -353,7 +526,8 @@
     }
    ],
    "cover_w": 1400,
-   "cover_h": 1000
+   "cover_h": 1000,
+   "featured": false
   },
   {
    "slug": "ssh-log-monitoring",
@@ -372,7 +546,6 @@
    "cover": "ssh/dashboard",
    "cover_fit": "cover",
    "repo": "https://github.com/abdessamadaitbrahim/ssh-log-monitoring-ai",
-   "detail": true,
    "context": "Introduction to Linux course, ENSA Tétouan, 2024-2025",
    "problem": "Detect suspicious SSH activity as it happens instead of reading authentication logs by hand.",
    "built": [
@@ -408,7 +581,8 @@
     }
    ],
    "cover_w": 1155,
-   "cover_h": 718
+   "cover_h": 718,
+   "featured": false
   },
   {
    "slug": "scout-ai",
@@ -420,23 +594,48 @@
    ],
    "stack": [
     "Python",
-    "NLP",
-    "Graph analysis",
+    "BERT",
+    "NetworkX",
+    "scikit-learn",
     "Streamlit",
+    "MongoDB",
+    "Neo4J",
+    "ElasticSearch",
     "Docker"
    ],
    "cover": "scout/models",
    "cover_fit": "contain",
    "repo": "https://github.com/abdessamadaitbrahim/scout-ai-web-mining",
-   "detail": false,
-   "gallery": [],
+   "context": "Web mining project",
+   "problem": "Analyse the football transfer market by combining three web mining axes: content mining (press articles and player statistics), structure mining (the network of players, clubs, agents and media) and usage mining (how fans and scouts browse player profiles). The output is a transfer potential score for the 10 most prominent players in European football.",
+   "built": [
+    "Data collection from NewsAPI (French and English articles on 10 target players), the Football-Data API (standings, top scorers and recent results for 5 major leagues) and Transfermarkt, with ethical scraping: robots.txt check, random delays and backoff on HTTP 429.",
+    "NLP on press articles: named entity recognition with CamemBERT and sentiment analysis with multilingual BERT, combined into a popularity score (0.4 x mentions + 0.35 x sentiment + 0.25 x source diversity).",
+    "A NetworkX graph of players, clubs, agents, leagues and media, analysed with HITS, PageRank and Louvain community detection, and exportable to Neo4J.",
+    "Usage mining on simulated web logs (500 users, 2,000 sessions): Apriori navigation patterns, K-Means audience segments (bettor, fan, curious) and Google Trends.",
+    "Random Forest, SVR and Gradient Boosting compared by R² to produce a 0-100 transfer potential score in 4 categories; results stored in MongoDB, Neo4J and ElasticSearch (Docker) and explored in a 6-tab Streamlit dashboard."
+   ],
+   "results": [
+    "The model is trained on 100 synthetically generated players and the usage logs are simulated, so the score demonstrates the method rather than a validated prediction.",
+    "Free API tiers (NewsAPI, Football-Data) limit how much live data can be collected per day."
+   ],
+   "gallery": [
+    {
+     "img": "scout/models",
+     "alt": "Model comparison by R² score",
+     "caption": "Model comparison",
+     "w": 1268,
+     "h": 678
+    }
+   ],
    "cover_w": 1268,
    "cover_h": 678,
-   "results": []
+   "featured": false
   },
   {
    "slug": "paris-traffic",
    "title": "Real-Time Paris Traffic Prediction",
+   "featured": true,
    "short": "Streaming pipeline with Kafka, Spark Structured Streaming and Spark ML, storing predictions in MongoDB and serving a Streamlit dashboard.",
    "cats": [
     "bigdata",
@@ -452,7 +651,6 @@
    "cover": "paris/dashboard",
    "cover_fit": "cover",
    "repo": "https://github.com/abdessamadaitbrahim/real-time-Paris-traffic-prediction",
-   "detail": true,
    "context": "Academic project, ENSA Tétouan, with Ayyoub Amazal, supervised by Dr. Imad Sassi",
    "problem": "Urban congestion is easier to manage when conditions are monitored and anticipated. The project builds an end-to-end pipeline that ingests Paris road-traffic sensor data and predicts the traffic state in real time.",
    "built": [
@@ -489,28 +687,6 @@
    "cover_h": 572
   },
   {
-   "slug": "hadoop-sales",
-   "title": "Sales Analysis with Hadoop MapReduce",
-   "short": "Analysis of more than 4 million sales transactions with Hadoop MapReduce and Python through Hadoop Streaming.",
-   "cats": [
-    "bigdata"
-   ],
-   "stack": [
-    "Hadoop",
-    "MapReduce",
-    "Python",
-    "Hadoop Streaming"
-   ],
-   "cover": "hadoop/categories",
-   "cover_fit": "contain",
-   "repo": "https://github.com/abdessamadaitbrahim/hadoop-mapreduce-sales-analysis",
-   "detail": false,
-   "gallery": [],
-   "cover_w": 780,
-   "cover_h": 385,
-   "results": []
-  },
-  {
    "slug": "sportlinebot",
    "title": "SportLineBot: Field-Marking Robot",
    "short": "Autonomous sports-field line-marking robot on an ESP32-S3, controlled from a Flask dashboard with French NLP commands and ML anomaly detection.",
@@ -529,8 +705,8 @@
    "cover": "sportlinebot/dashboard",
    "cover_fit": "cover",
    "repo": "https://github.com/abdessamadaitbrahim/sportlinebot-field-marking-robot",
-   "detail": true,
    "context": "MECA WORLD CUP 2026, with Abdelaaziz Ait Kheri",
+   "hackathon": "meca-world-cup-2026",
    "problem": "Marking the lines of a sports field by hand is slow and imprecise. SportLineBot drives and sprays paint on its own while an operator supervises from a browser, with buttons or by typing a sentence in French such as \"trace un terrain de foot\".",
    "built": [
     "Firmware for an ESP32-S3 with a WebSocket server, time-based motion, an ultrasonic sensor on a servo for obstacle scanning, a paint pump and a paint-level sensor.",
@@ -560,7 +736,8 @@
     }
    ],
    "cover_w": 1400,
-   "cover_h": 788
+   "cover_h": 788,
+   "featured": false
   },
   {
    "slug": "heart-guardian",
@@ -581,8 +758,8 @@
    "cover": "heartguardian/prototype",
    "cover_fit": "cover",
    "repo": "https://github.com/abdessamadaitbrahim/heart-guardian-ecg-game",
-   "detail": true,
    "context": "Game4Health Hackathon 2026, team Health Hackers",
+   "hackathon": "game4health-2026",
    "problem": "Diabetes and obesity are rising in Morocco. Heart Guardian builds cardiac monitoring into a game so that physical activity is motivating and heart-rate anomalies are caught early.",
    "built": [
     "An ESP32 samples a 3-electrode ECG sensor at 100 Hz and streams it over WiFi.",
@@ -619,7 +796,50 @@
     }
    ],
    "cover_w": 827,
-   "cover_h": 808
+   "cover_h": 808,
+   "featured": false
+  },
+  {
+   "slug": "hadoop-sales",
+   "title": "Sales Analysis with Hadoop MapReduce",
+   "short": "Analysis of more than 4 million sales transactions with Hadoop MapReduce and Python through Hadoop Streaming.",
+   "cats": [
+    "bigdata"
+   ],
+   "stack": [
+    "Hadoop",
+    "MapReduce",
+    "HDFS",
+    "Python",
+    "Hadoop Streaming"
+   ],
+   "cover": "hadoop/categories",
+   "cover_fit": "contain",
+   "repo": "https://github.com/abdessamadaitbrahim/hadoop-mapreduce-sales-analysis",
+   "context": "Big Data project",
+   "problem": "Aggregate a file of more than 4 million sales transactions (date, time, store, category, amount, payment method) with the MapReduce programming model.",
+   "built": [
+    "Python 3 mappers that extract a key (store or category) and the amount, and reducers that aggregate the pairs after Hadoop's shuffle and sort.",
+    "Four analyses: sales per store, sales per category, highest sale per store, and overall total with the number of sales.",
+    "Jobs run through Hadoop Streaming on HDFS, after a local test on a sample with a Unix pipe (head | mapper | sort | reducer)."
+   ],
+   "results": [
+    "4,138,476 transactions processed, for total sales of 1,034,457,953.26.",
+    "Toys is the top category (57,463,477.11), just ahead of Consumer Electronics (57,452,374.13).",
+    "Limitations documented in the repository: floating-point artefacts in sums, no combiner, and a total reducer that assumes a single reducer."
+   ],
+   "gallery": [
+    {
+     "img": "hadoop/categories",
+     "alt": "Sales by category",
+     "caption": "Sales by category",
+     "w": 780,
+     "h": 385
+    }
+   ],
+   "cover_w": 780,
+   "cover_h": 385,
+   "featured": false
   },
   {
    "slug": "university-dwh-bi",
@@ -638,11 +858,35 @@
    "cover": "dwbi/dashboard",
    "cover_fit": "cover",
    "repo": "https://github.com/abdessamadaitbrahim/University-Data-Warehouse-BI-Project",
-   "detail": false,
-   "gallery": [],
+   "context": "Business Intelligence module, ENSA Tétouan, 2025-2026",
+   "problem": "University data is spread across several sources, which makes it hard to keep consistent and to analyse. The project covers the complete BI lifecycle: raw CSV data, ETL, data warehouse, OLAP cube and dashboards.",
+   "built": [
+    "An SSIS master package that removes duplicates, handles nulls, standardises dates and emails, corrects gender values, cleans names and rejects grades outside 0-20.",
+    "Invalid records are redirected to an Excel file for correction and reintegration, so nothing is silently lost.",
+    "A staging database, then a star-schema warehouse loaded with surrogate keys and incremental updates.",
+    "An SSAS MOLAP cube with course and academic-date hierarchies (year, semester, quarter).",
+    "Three Power BI dashboards: university overview, student performance and course analysis."
+   ],
+   "results": [],
+   "gallery": [
+    {
+     "img": "dwbi/dashboard",
+     "alt": "Power BI dashboard",
+     "caption": "Power BI dashboard",
+     "w": 1077,
+     "h": 602
+    },
+    {
+     "img": "dwbi/architecture",
+     "alt": "Solution architecture",
+     "caption": "Architecture",
+     "w": 1158,
+     "h": 732
+    }
+   ],
    "cover_w": 1077,
    "cover_h": 602,
-   "results": []
+   "featured": false
   },
   {
    "slug": "power-bi-hr",
@@ -657,11 +901,28 @@
    "cover": "powerbi/overview",
    "cover_fit": "cover",
    "repo": "https://github.com/abdessamadaitbrahim/power-bi-hr-dashboard",
-   "detail": false,
-   "gallery": [],
+   "context": "Data visualisation project, with Ayyoub Amazal",
+   "problem": "Give decision-makers a clear view of a company's workforce: gender distribution, years of service, job levels, job satisfaction, overtime, commuting distance, and the employees due for promotion or retrenchment.",
+   "built": [
+    "A three-page Power BI report with a side menu: overview, employee lists (due for promotion, possible retrenchment), and department and job role analysis.",
+    "Filters by department, job level and job satisfaction; bar, pie and donut charts; detailed employee tables."
+   ],
+   "results": [
+    "1,470 employees in the dataset (882 male, 588 female).",
+    "72 employees (4.9%) due for promotion and 117 (8.0%) flagged for retrenchment; 28.3% work overtime."
+   ],
+   "gallery": [
+    {
+     "img": "powerbi/overview",
+     "alt": "Dashboard overview",
+     "caption": "Overview",
+     "w": 1400,
+     "h": 850
+    }
+   ],
    "cover_w": 1400,
    "cover_h": 850,
-   "results": []
+   "featured": false
   },
   {
    "slug": "tableau-science",
@@ -678,11 +939,33 @@
    "cover_fit": "cover",
    "repo": "https://github.com/abdessamadaitbrahim/tableau-global-scientific-production",
    "demo": "https://public.tableau.com/app/profile/abdessamad.ait.brahim/viz/Histoire1-Analysedelaproductionscientifique/Analysedelaproductionscientifique",
-   "detail": false,
-   "gallery": [],
+   "context": "Data Visualization module, Big Data and AI programme",
+   "problem": "Tell the story of the world's scientific production between 1996 and 2014 from SCImago country indicators: documents, citations, H-index and rank.",
+   "built": [
+    "A Tableau Story with three dashboards: contribution of the leading countries, analysis by country (with a world production map) and an H-index overview.",
+    "Interactive controls: indicator selector (documents or citations), year and size parameters, country filters and highlight actions.",
+    "Published on Tableau Public."
+   ],
+   "results": [],
+   "gallery": [
+    {
+     "img": "tableau/countries",
+     "alt": "Analysis by country",
+     "caption": "Analysis by country",
+     "w": 1400,
+     "h": 921
+    },
+    {
+     "img": "tableau/hindex",
+     "alt": "H-index overview",
+     "caption": "H-index overview",
+     "w": 1400,
+     "h": 942
+    }
+   ],
    "cover_w": 1400,
    "cover_h": 921,
-   "results": []
+   "featured": false
   },
   {
    "slug": "yelp-n8n",
@@ -696,16 +979,33 @@
     "Python",
     "Selenium",
     "n8n",
-    "Docker"
+    "Docker",
+    "Google Sheets"
    ],
    "cover": "yelp/workflow",
    "cover_fit": "cover",
    "repo": "https://github.com/abdessamadaitbrahim/web-scraping-yelp-n8n",
-   "detail": false,
-   "gallery": [],
+   "context": "Web Analytics module, ENSA Tétouan, supervised by Dr. Imad Sassi",
+   "problem": "Explore two complementary ways of collecting web data: programmatic scraping with code, and no-code workflow automation.",
+   "built": [
+    "A Selenium scraper for the 500 best-rated restaurants in Paris on Yelp, collecting reviewer information and producing a ranking of reviewer nationalities.",
+    "Checkpoint-based progress saving so scraping can resume after an interruption, with randomised delays between interactions.",
+    "An n8n workflow, running in Docker every 24 hours, that collects Samsung Galaxy S24 titles and prices from Jumia, Boulanger, AliExpress and Newegg with CSS selectors.",
+    "Results sent automatically to Google Sheets through OAuth2."
+   ],
+   "results": [],
+   "gallery": [
+    {
+     "img": "yelp/workflow",
+     "alt": "n8n workflow",
+     "caption": "n8n workflow",
+     "w": 1400,
+     "h": 741
+    }
+   ],
    "cover_w": 1400,
    "cover_h": 741,
-   "results": []
+   "featured": false
   },
   {
    "slug": "numerical-linear-algebra",
@@ -723,9 +1023,19 @@
    "cover": null,
    "label": "Linear algebra",
    "repo": "https://github.com/abdessamadaitbrahim/numerical-linear-algebra-python",
-   "detail": false,
+   "context": "Individual project, Big Data and AI programme, ENSA Tétouan, 2024-2025",
+   "problem": "Solve linear systems and apply matrix decompositions to data analysis with NumPy and SciPy.",
+   "built": [
+    "Linear systems: LU decomposition, Cholesky, Jacobi and Gauss-Seidel iterations, with an accuracy and execution-time comparison.",
+    "Decompositions: SVD (reconstruction, rank-2 approximation) and QR (orthogonality check).",
+    "Data analysis: principal component analysis via SVD and image compression at different ranks (k = 10, 50, 100).",
+    "A theory report comparing direct and iterative methods for Ax = b and discussing SVD-based dimensionality reduction."
+   ],
+   "results": [
+    "Matrices and vectors are generated randomly, so numerical results change at each run."
+   ],
    "gallery": [],
-   "results": []
+   "featured": false
   },
   {
    "slug": "cryptography",
@@ -743,11 +1053,28 @@
    "cover": "crypto/aes",
    "cover_fit": "contain",
    "repo": "https://github.com/abdessamadaitbrahim/cryptography-symmetric-asymmetric-analysis",
-   "detail": false,
-   "gallery": [],
+   "context": "Security M232 and Cryptography course, December 2025",
+   "problem": "Understand the fundamentals of modern cryptography: the AES symmetric cipher and the main asymmetric systems.",
+   "built": [
+    "Symmetric part: AES architecture, encryption and decryption rounds and the four transformations (SubBytes, ShiftRows, MixColumns, AddRoundKey); AES-128, AES-192 and AES-256 use 10, 12 and 14 rounds on 128-bit blocks.",
+    "Asymmetric part: public and private keys, one-way functions, RSA (integer factorisation), Diffie-Hellman and ElGamal (discrete logarithm), and their roles in encryption, signatures and key exchange.",
+    "A written report and mind maps with step-by-step numerical examples."
+   ],
+   "results": [
+    "Asymmetric systems need keys of 2048 bits or more, are vulnerable to quantum computers and are much slower than AES, so in practice they are combined with AES (hybrid encryption)."
+   ],
+   "gallery": [
+    {
+     "img": "crypto/aes",
+     "alt": "AES mind map",
+     "caption": "AES mind map",
+     "w": 1400,
+     "h": 1935
+    }
+   ],
    "cover_w": 1400,
    "cover_h": 1935,
-   "results": []
+   "featured": false
   },
   {
    "slug": "dsa-cpp",
@@ -757,14 +1084,377 @@
     "foundations"
    ],
    "stack": [
-    "C++"
+    "C++17",
+    "g++"
    ],
    "cover": null,
    "label": "C++ DSA",
    "repo": "https://github.com/abdessamadaitbrahim/dsa-cpp-practice",
-   "detail": false,
+   "context": "Data Structures and Algorithms module, ENSA",
+   "problem": "Strengthen core computer-science foundations by implementing classical data structures and algorithms from scratch.",
+   "built": [
+    "16 progressive topics, from basics, pointers, classes and STL vectors to arrays and searching.",
+    "Sorting (bubble, selection, insertion, merge sort), recursion and dynamic programming (Fibonacci, 0/1 knapsack, LCS).",
+    "Stacks (balanced parentheses), queues (including a queue built from two stacks) and singly linked lists (reversal, cycle detection).",
+    "Binary trees and BSTs, graphs (BFS, DFS, connected components) and hash maps (frequency counting, Two Sum)."
+   ],
+   "results": [],
    "gallery": [],
-   "results": []
+   "featured": false
+  }
+ ],
+ "experience": [
+  {
+   "id": "stmicroelectronics",
+   "role": "AI Engineer Intern",
+   "org": "STMicroelectronics",
+   "kind": "Internship",
+   "dates": "Aug 2026 – Sep 2026",
+   "length": "2 months",
+   "place": "Bouskoura, Casablanca-Settat, Morocco · On-site",
+   "summary": "Designed and built a proof-of-concept conversational agent that makes manufacturing performance data accessible in natural language, as an extension of an existing production capacity monitoring tool.",
+   "points": [
+    "Built a data pipeline in Python and pandas to clean, validate and transform production records into reliable performance indicators.",
+    "Investigated a data quality issue with a hypothesis-driven method, ruling out several causes before finding the root cause.",
+    "Designed a modular architecture: MariaDB for storage, FastAPI for a secured read-only API, and Dify to orchestrate an LLM-based agent.",
+    "Wrote a strict system prompt so the agent never fabricates data and flags known data limitations before citing a value.",
+    "Delivered a working demo that answers engineering questions in natural language."
+   ],
+   "skills": [
+    "Python",
+    "SQL",
+    "FastAPI",
+    "MariaDB",
+    "LLM agent orchestration (Dify)"
+   ],
+   "note": "Company data is confidential; no code or documents are published."
+  },
+  {
+   "id": "labex-botground",
+   "role": "AI Engineer Intern, SaaS project Botground",
+   "org": "Labex",
+   "kind": "Internship",
+   "dates": "Jun 2026 – Jul 2026",
+   "length": "2 months",
+   "place": "Casablanca-Settat, Morocco · On-site",
+   "summary": "End-to-end NLP pipeline for automatic sentiment analysis of customer-chatbot conversations in Botground, a Moroccan SaaS chatbot platform.",
+   "points": [
+    "Fine-tuned multilingual Transformer models (XLM-RoBERTa, mBERT, DarijaBERT) for sentiment classification in French, English and Moroccan Darija, reaching 84.3% accuracy.",
+    "Generated and curated a synthetic multilingual dataset of 4,000+ annotated conversations across hospitality, logistics and customer support.",
+    "Designed a real-time analytics dashboard (Flask, SQLite): KPI tracking, sentiment trends, detection of problematic conversations, advanced filtering.",
+    "Benchmarked the three models under identical conditions to justify the production choice.",
+    "Deployed on AWS (EC2, S3)."
+   ],
+   "skills": [
+    "Python",
+    "Hugging Face Transformers",
+    "XLM-RoBERTa",
+    "mBERT",
+    "DarijaBERT"
+   ],
+   "project": "botground"
+  },
+  {
+   "id": "smartmatchrh",
+   "role": "AI Engineer Intern, SmartMatchRH project",
+   "org": "Cloud Marketing Hub",
+   "kind": "Internship",
+   "dates": "Jul 2025 – Aug 2025",
+   "length": "2 months",
+   "place": "Tangier, Morocco · On-site",
+   "summary": "Development of SmartMatchRH, an AI solution to optimise recruitment.",
+   "points": [
+    "Deep learning for candidate-job scoring.",
+    "Multilingual NLP for CV analysis.",
+    "HR chatbot and analytics dashboard.",
+    "Results: +35% matching accuracy, 85% time saved in pre-screening, 78% interview success rate, 200% more applications processed."
+   ],
+   "skills": [
+    "Artificial intelligence",
+    "Multilingual NLP",
+    "Agile methodology"
+   ]
+  },
+  {
+   "id": "math-instructor",
+   "role": "Mathematics Instructor",
+   "org": "Self-employed",
+   "kind": "Freelance",
+   "dates": "Jan 2025 – Jun 2025",
+   "length": "6 months",
+   "place": "Tétouan, Morocco · Hybrid",
+   "summary": "Private mathematics tutoring for high school students (Tronc Commun, 1st and 2nd year Baccalaureate, Moroccan curriculum).",
+   "points": [
+    "Core concepts: algebra, functions, analysis and geometry.",
+    "Exercises and exam preparation, with lessons adapted to each student's level."
+   ],
+   "skills": [
+    "Mathematics",
+    "Teaching",
+    "Tutoring",
+    "Communication",
+    "Time management"
+   ]
+  }
+ ],
+ "education": [
+  {
+   "id": "ensa-engineering",
+   "school": "École Nationale des Sciences Appliquées de Tétouan (ENSA Tétouan)",
+   "logo": true,
+   "degree": "Engineering cycle in Big Data and Artificial Intelligence",
+   "dates": "Sep 2024 – Present",
+   "detail": "Abdelmalek Essaâdi University. Final year; looking for a 6-month PFE internship starting January 2027.",
+   "skills": [
+    "Python",
+    "SQL",
+    "Machine learning",
+    "Deep learning",
+    "Data visualisation",
+    "Agile management",
+    "Trello",
+    "Project management"
+   ]
+  },
+  {
+   "id": "ensa-prep",
+   "school": "ENSA Tétouan",
+   "logo": true,
+   "degree": "Two-year integrated preparatory programme, engineering studies",
+   "dates": "2022 – 2024",
+   "detail": "Integrated preparatory years for engineering schools.",
+   "skills": [
+    "Mathematics",
+    "Statistics",
+    "Probability",
+    "Algebra"
+   ]
+  },
+  {
+   "id": "baccalaureate",
+   "school": "Lycée Tarik Ibn Ziad, Kelaat M'Gouna, Tinghir",
+   "logo": false,
+   "degree": "Scientific Baccalaureate, French option",
+   "dates": "2020 – 2022",
+   "detail": "",
+   "skills": [
+    "Public speaking",
+    "Event presentation",
+    "Teamwork",
+    "Academic competitions"
+   ]
+  }
+ ],
+ "hackathons": [
+  {
+   "slug": "water4future-2026",
+   "title": "Water4Future International Hackathon 2026",
+   "short": "Water4Future 2026",
+   "date": "26–27 February 2026",
+   "month": "Feb 2026",
+   "place": "Montpellier",
+   "start": "2026-02-26",
+   "end": "2026-02-27",
+   "org": "UNESCO ICIREWARD, University of Montpellier",
+   "team": "Team AMAN, representing ENSA Tétouan",
+   "result": "Semi-finalist (top 38 of 125+ teams) and Water Talent Prize",
+   "summary": "An international student hackathon on water: 125+ teams and 800+ students from 22 countries. Team AMAN reached the semi-finals and received the jury's Water Talent Prize.",
+   "description": [
+    "The Water4Future International Hackathon gathered more than 800 students from 22 countries in Montpellier on 26 and 27 February 2026, organised by the UNESCO ICIREWARD centre and the University of Montpellier.",
+    "Representing ENSA Tétouan as part of Team AMAN, we reached the top 38 semi-finalists out of 125+ teams. The jury also awarded the 2026 W4F Students Hackathon Water Talent Prize to the project Aman (27 February 2026, signed by Eric Servat, Director of the ICIREWARD UNESCO Centre)."
+   ],
+   "built": [
+    "An AgriTech solution built in 48 hours: a smart vertical hydroponic system with closed-loop irrigation.",
+    "A real-time IoT dashboard for pH, EC, temperature and solar energy.",
+    "AmanBot, an AI diagnostic chatbot for crop management.",
+    "Predictive AI for decision support."
+   ],
+   "project": null,
+   "project_note": "AMAN was built during the hackathon and has no public code repository.",
+   "images": [
+    {
+     "src": "hackathons/water4future-2026/aman-prototype.webp",
+     "alt": "AMAN prototype: vertical hydroponic tower next to a laptop showing the monitoring dashboard",
+     "caption": "AMAN prototype and live dashboard",
+     "w": 360,
+     "h": 480
+    },
+    {
+     "src": "hackathons/water4future-2026/water-talent-prize.webp",
+     "alt": "2026 W4F Students Hackathon Water Talent Prize awarded to the project Aman",
+     "caption": "Water Talent Prize",
+     "w": 1023,
+     "h": 721
+    }
+   ],
+   "files": [
+    {
+     "src": "hackathons/water4future-2026/water-talent-prize.webp",
+     "label": "Water Talent Prize certificate",
+     "kind": "Image"
+    },
+    {
+     "src": "hackathons/water4future-2026/attestation-of-participation.webp",
+     "label": "Attestation of participation",
+     "kind": "Image"
+    },
+    {
+     "src": "hackathons/water4future-2026/aman-presentation.pdf",
+     "label": "AMAN pitch presentation (French)",
+     "kind": "PDF"
+    }
+   ]
+  },
+  {
+   "slug": "game4health-2026",
+   "title": "Game4Health Hackathon 2026",
+   "short": "Game4Health 2026",
+   "date": "3–4 April 2026",
+   "month": "Apr 2026",
+   "place": "Rabat",
+   "start": "2026-04-03",
+   "end": "2026-04-04",
+   "org": "SmartTech Lab, iSMAGI",
+   "team": "Health Hackers, representing ENSA Tétouan",
+   "result": "Finalist",
+   "summary": "An innovation competition on games for health. Our team, Health Hackers, reached the final with Heart Guardian, an adaptive game driven by an ECG sensor.",
+   "description": [
+    "The Game4Health Hackathon is an innovation competition organised by the SmartTech Lab of iSMAGI in Rabat, held on 3 and 4 April 2026.",
+    "Our team, Health Hackers, was a finalist. We designed Heart Guardian, an adaptive health game that uses an ECG sensor (ESP32) and AI analysis of the heart rhythm, and pitched it with a full business model, cost structure and 6-month roadmap."
+   ],
+   "built": [
+    "An ESP32 ECG sensor streaming the heart signal over WiFi.",
+    "AI analysis of the heart rhythm that classifies it in real time.",
+    "A game that adapts to the player's heart rhythm.",
+    "A business model, cost structure and 6-month roadmap for the pitch."
+   ],
+   "project": "heart-guardian",
+   "project_note": "",
+   "images": [
+    {
+     "src": "img/projects/heartguardian/prototype.webp",
+     "alt": "Heart Guardian prototype: ESP32 and ECG electrodes",
+     "caption": "Heart Guardian prototype",
+     "w": 827,
+     "h": 808
+    }
+   ],
+   "files": [
+    {
+     "src": "hackathons/game4health-2026/certificate-of-participation.webp",
+     "label": "Attestation of participation (team)",
+     "kind": "Image"
+    },
+    {
+     "src": "hackathons/game4health-2026/heart-guardian-presentation.pdf",
+     "label": "Heart Guardian pitch presentation (French)",
+     "kind": "PDF"
+    }
+   ]
+  },
+  {
+   "slug": "meca-world-cup-2026",
+   "title": "MECA WORLD CUP 2026",
+   "short": "MECA WORLD CUP 2026",
+   "date": "May 2026",
+   "month": "May 2026",
+   "place": "",
+   "start": "2026-05",
+   "end": "2026-05",
+   "org": "Club Mécatronique, ENSA Tétouan",
+   "team": "With Abdelaaziz Ait Kheri (mechatronics)",
+   "result": "Participant, certificate of participation",
+   "summary": "A national robotics competition. With a mechatronics teammate, I built SportLineBot, an autonomous robot that paints sports field lines from natural-language commands.",
+   "description": [
+    "MECA WORLD CUP 2026 is a national robotics competition organised by the Club Mécatronique of ENSA Tétouan.",
+    "With Abdelaaziz Ait Kheri (mechatronics engineering), I presented SportLineBot, an autonomous robot that paints sports field lines (football, basketball, tennis, handball) from natural-language commands. I developed the AI part."
+   ],
+   "built": [
+    "An NLP module (TF-IDF and Naive Bayes, about 90% accuracy) that turns French sentences into robot commands.",
+    "An Isolation Forest module for real-time anomaly detection: obstacles, empty paint tank, blocked robot.",
+    "Both models run locally with scikit-learn."
+   ],
+   "project": "sportlinebot",
+   "project_note": "",
+   "images": [
+    {
+     "src": "hackathons/meca-world-cup-2026/robot-prototype.webp",
+     "alt": "SportLineBot robot prototype with its paint tank, ESP32 board and ultrasonic sensor",
+     "caption": "SportLineBot prototype",
+     "w": 682,
+     "h": 900
+    },
+    {
+     "src": "hackathons/meca-world-cup-2026/user-manual-cover.webp",
+     "alt": "Cover of the SportLineBot user manual",
+     "caption": "User manual cover",
+     "w": 682,
+     "h": 900
+    }
+   ],
+   "files": [
+    {
+     "src": "hackathons/meca-world-cup-2026/certificate-of-participation.webp",
+     "label": "Certificate of participation",
+     "kind": "Image"
+    },
+    {
+     "src": "hackathons/meca-world-cup-2026/sportlinebot-presentation.pdf",
+     "label": "SportLineBot presentation (French)",
+     "kind": "PDF"
+    }
+   ]
+  }
+ ],
+ "volunteering": [
+  {
+   "id": "hand-in-hand",
+   "role": "Participant, Erasmus+ Youth Exchange \"Hand in Hand\"",
+   "org": "1001 Schakels",
+   "dates": "Sep 2021 (8–19 September)",
+   "cause": "Social services",
+   "text": "A youth exchange between young people from Belgium and Morocco.",
+   "points": [
+    "Helped refurbish and equip 2 village schools (80 pupils aged 3 to 6) so they could open.",
+    "Took part in workshops and debates on Amazigh identity, civic engagement, women's role in society and environmental responsibility.",
+    "Practised intercultural communication and teamwork in a multicultural group, and shared the Tamazight language and culture.",
+    "Certified through Youthpass."
+   ]
+  },
+  {
+   "id": "amazigh-new-year",
+   "role": "Active participant",
+   "org": "Citizenship and Human Rights Education Club, Tarik Ibn Ziyad High School",
+   "dates": "Jan 2022",
+   "cause": "Education",
+   "text": "Took an active part in the cultural evening organised to celebrate the Amazigh New Year 2972, promoting Amazigh culture and heritage.",
+   "points": []
+  }
+ ],
+ "honors": [
+  {
+   "title": "Semi-finalist (top 38 of 125+ teams) and Water Talent Prize",
+   "event": "Water4Future International Hackathon 2026",
+   "issuer": "UNESCO ICIREWARD, University of Montpellier",
+   "date": "Feb 2026",
+   "hackathon": "water4future-2026",
+   "text": "Top 38 semi-finalists out of 125+ teams and 800+ students from 22 countries, with Team AMAN. The jury also awarded the 2026 W4F Students Hackathon Water Talent Prize to the project Aman."
+  },
+  {
+   "title": "Finalist",
+   "event": "Game4Health Hackathon 2026",
+   "issuer": "SmartTech Lab, iSMAGI, Rabat",
+   "date": "Apr 2026",
+   "hackathon": "game4health-2026",
+   "text": "Finalist team Health Hackers with Heart Guardian, an adaptive health game using an ECG sensor and AI analysis of the heart rhythm."
+  },
+  {
+   "title": "Participant, SportLineBot",
+   "event": "MECA WORLD CUP 2026, national robotics competition",
+   "issuer": "Club Mécatronique, ENSA Tétouan",
+   "date": "May 2026",
+   "hackathon": "meca-world-cup-2026",
+   "text": "Autonomous sports field line-marking robot built with Abdelaaziz Ait Kheri; I developed the NLP command module and the anomaly detection."
   }
  ]
 }
