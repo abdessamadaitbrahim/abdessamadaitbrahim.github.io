@@ -55,7 +55,16 @@ ICON = {
  "menu": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>',
 }
 
-JS_FLAG = '<script>document.documentElement.classList.add("js")</script>'
+# Inline in every <head>. The site has no service worker; a stale one left on the same origin
+# (for example by another project served earlier on the same localhost port) can answer every
+# reload with a cached home page. Unregister any worker scoped to the site root and reload the
+# SAME URL once. The path is never changed; project sites under /<repo>/ are not touched.
+# It is inline (not in main.js) because a hijacked page's relative script URLs may not resolve.
+JS_FLAG = ('<script>document.documentElement.classList.add("js");'
+           '(function(n){if(!n||!n.getRegistrations)return;n.getRegistrations().then(function(r){'
+           'var s=location.origin+"/",o=r.filter(function(x){return x.scope===s});if(!o.length)return;'
+           'Promise.all(o.map(function(x){return x.unregister()})).then(function(d){if(d.some(Boolean))location.reload()})'
+           '}).catch(function(){})})(navigator.serviceWorker);</script>')
 
 
 def ld(obj):

@@ -24,7 +24,7 @@
 <link rel="apple-touch-icon" href="assets/img/site/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/fraunces-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<script>document.documentElement.classList.add("js")</script>
+<script>document.documentElement.classList.add("js");(function(n){if(!n||!n.getRegistrations)return;n.getRegistrations().then(function(r){var s=location.origin+"/",o=r.filter(function(x){return x.scope===s});if(!o.length)return;Promise.all(o.map(function(x){return x.unregister()})).then(function(d){if(d.some(Boolean))location.reload()})}).catch(function(){})})(navigator.serviceWorker);</script>
 <link rel="stylesheet" href="assets/css/style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://abdessamadaitbrahim.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Experience", "item": "https://abdessamadaitbrahim.github.io/experience.html"}]}</script>
 </head><body>
