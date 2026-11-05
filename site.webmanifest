@@ -1,0 +1,20 @@
+{
+ "name": "Abdessamad Ait Brahim",
+ "short_name": "A. Ait Brahim",
+ "start_url": "./index.html",
+ "display": "browser",
+ "background_color": "#f4eee3",
+ "theme_color": "#f4eee3",
+ "icons": [
+  {
+   "src": "assets/img/site/apple-touch-icon.png",
+   "sizes": "180x180",
+   "type": "image/png"
+  },
+  {
+   "src": "assets/img/site/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  }
+ ]
+}

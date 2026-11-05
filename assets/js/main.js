@@ -1,26 +1,10 @@
-/* Portfolio behaviour: theme, menus, project filters, "On this page" scroll spy, reveal, email, hero canvas. */
+/* Portfolio behaviour (light theme only): menus, project filters, "On this page" scroll spy, reveal, email, hero canvas. */
 (function () {
   "use strict";
   var root = document.documentElement;
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   function $(s, c) { return (c || document).querySelector(s); }
   function $$(s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); }
-
-  /* theme */
-  var toggle = $(".theme-toggle");
-  function label() {
-    if (toggle) toggle.setAttribute("aria-label", root.getAttribute("data-theme") === "dark" ? "Switch to light mode" : "Switch to dark mode");
-  }
-  if (toggle) {
-    label();
-    toggle.addEventListener("click", function () {
-      var t = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-      root.setAttribute("data-theme", t);
-      try { localStorage.setItem("theme", t); } catch (e) {}
-      label();
-      document.dispatchEvent(new Event("themechange"));
-    });
-  }
 
   /* mobile menu */
   var menuBtn = $(".menu-btn"), nav = $(".nav");
@@ -167,7 +151,6 @@
     function loop() { if (visible && !document.hidden) draw(); requestAnimationFrame(loop); }
     var t = 0;
     window.addEventListener("resize", function () { clearTimeout(t); t = setTimeout(resize, 150); });
-    document.addEventListener("themechange", function () { readColor(); draw(); });
     var hero = canvas.parentNode;
     hero.addEventListener("pointermove", function (e) { var r = canvas.getBoundingClientRect(); mouse = { x: e.clientX - r.left, y: e.clientY - r.top }; });
     hero.addEventListener("pointerleave", function () { mouse = null; });

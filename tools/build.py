@@ -2,7 +2,7 @@
 
 Run from the repository root:  python tools/build.py
 Reads tools/content.json and writes every HTML page, 404.html, sitemap.xml,
-robots.txt and favicon.svg. All internal links are relative so the site works
+robots.txt. Icons come from tools/make_icons.py. All internal links are relative so the site works
 on GitHub Pages; only 404.html uses root-absolute links (it is served at any path).
 """
 import json
@@ -51,12 +51,10 @@ ICON = {
  "file": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8l-5-5Z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>',
  "image": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="1"/><circle cx="9" cy="10" r="2"/><path d="m21 17-5-5-9 8"/></svg>',
  "chev": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>',
- "moon": '<svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>',
- "sun": '<svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4m11.4-11.4 1.4-1.4"/></svg>',
  "menu": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>',
 }
 
-THEME_JS = '<script>(function(){var d=document.documentElement;try{var t=localStorage.getItem("theme");if(!t){t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}d.setAttribute("data-theme",t)}catch(e){}d.classList.add("js")})();</script>'
+JS_FLAG = '<script>document.documentElement.classList.add("js")</script>'
 
 
 def ld(obj):
@@ -74,7 +72,7 @@ def head(title, desc, path, p, extra=""):
     canon = URL + "/" + ("" if path == "index.html" else path)
     og = URL + "/assets/img/site/og.png"
     return f'''<!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -82,8 +80,7 @@ def head(title, desc, path, p, extra=""):
 <meta name="description" content="{e(desc)}">
 <meta name="author" content="{NAME}">
 <link rel="canonical" href="{canon}">
-<meta name="theme-color" content="#f4eee3" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#1c1916" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f4eee3">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{NAME}">
 <meta property="og:title" content="{e(title)}">
@@ -94,10 +91,13 @@ def head(title, desc, path, p, extra=""):
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="{NAME}, AI and Big Data engineering student">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="{p}favicon.svg" type="image/svg+xml">
+<link rel="icon" href="{p}favicon.ico" sizes="any">
+<link rel="icon" href="{p}assets/img/site/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="manifest" href="{p}site.webmanifest">
+<link rel="apple-touch-icon" href="{p}assets/img/site/apple-touch-icon.png">
 <link rel="preload" href="{p}assets/fonts/fraunces-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{p}assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-{THEME_JS}
+{JS_FLAG}
 <link rel="stylesheet" href="{p}assets/css/style.css">
 {extra}
 </head>'''
@@ -115,7 +115,7 @@ def header(p, current):
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
 <div class="container">
-<a class="brand" href="{p}index.html" aria-label="{NAME}, home"><span class="brand__mark" aria-hidden="true">A</span><span class="brand__name">Abdessamad <em>Ait Brahim</em></span></a>
+<a class="brand" href="{p}index.html" aria-label="{NAME}, home"><img class="brand__mark" src="{p}assets/img/site/avatar.webp" alt="" width="96" height="96"><span class="brand__name">Abdessamad <em>Ait Brahim</em></span></a>
 <nav class="nav" id="nav" aria-label="Main">
 {main}
 <div class="nav__more{more_cur}">
@@ -124,7 +124,6 @@ def header(p, current):
 </div>
 </nav>
 <div class="tools">
-<button class="icon-btn theme-toggle" type="button" aria-label="Switch color theme">{ICON['moon']}{ICON['sun']}</button>
 <button class="icon-btn menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav">{ICON['menu']}</button>
 </div>
 </div>
@@ -706,7 +705,11 @@ def main():
     urls = "".join(f'<url><loc>{URL}/{"" if path == "index.html" else path}</loc><lastmod>{TODAY}</lastmod><priority>{prio(path)}</priority></url>\n' for path in pages)
     write("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + urls + "</urlset>\n")
     write("robots.txt", f"User-agent: *\nAllow: /\nDisallow: /tools/\nSitemap: {URL}/sitemap.xml\n")
-    write("favicon.svg", '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="31" fill="#8c2f1f"/><circle cx="32" cy="32" r="26.5" fill="none" stroke="#f4eee3" stroke-opacity=".45" stroke-width="1.2"/><text x="32" y="44" text-anchor="middle" font-family="Georgia,\'Times New Roman\',serif" font-size="34" font-style="italic" fill="#f4eee3">A</text></svg>\n')
+    (ROOT / "favicon.svg").unlink(missing_ok=True)  # replaced by the portrait icons from tools/make_icons.py
+    write("site.webmanifest", json.dumps({"name": NAME, "short_name": "A. Ait Brahim", "start_url": "./index.html", "display": "browser",
+                                          "background_color": "#f4eee3", "theme_color": "#f4eee3",
+                                          "icons": [{"src": "assets/img/site/apple-touch-icon.png", "sizes": "180x180", "type": "image/png"},
+                                                    {"src": "assets/img/site/icon-512.png", "sizes": "512x512", "type": "image/png"}]}, indent=1) + "\n")
     write(".nojekyll", "")
     print("built:", len(pages) + 1, "pages")
 

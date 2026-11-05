@@ -4,12 +4,13 @@ Run from the repository root:  python tools/import_incoming.py
 Requires Pillow and pypdf. incoming/ is git-ignored and never published as is.
 
 What is published (everything else in incoming/ stays private):
-- photos: only the robot, the AMAN tower without people, the SportLineBot manual cover
-  and the Water Talent Prize certificate, resized and converted to WebP;
+- photos: event photos (including photos of me and my teammates, allowed since the
+  November 2026 update), the robot, the AMAN tower, the SportLineBot manual cover and the
+  Water Talent Prize certificate, resized and converted to WebP;
 - certificates: converted to WebP (scans straightened);
 - presentations: re-saved as lighter PDFs. Slides that show photos of people are dropped
   (SportLineBot slide 2, AMAN slide 16).
-Not published: photos of me, the Youthpass PDF (date of birth), any volunteering file,
+Not published: the Youthpass PDF (date of birth), any volunteering file,
 any STMicroelectronics document.
 """
 import io
@@ -75,14 +76,19 @@ def main():
         return
     w4f, g4h, meca = DST / "water4future-2026", DST / "game4health-2026", DST / "meca-world-cup-2026"
     print("Water4Future")
+    webp(SRC / "water4future-2026/aman-prototype-demo.jpg", w4f / "aman-prototype-demo.webp", 900)
     webp(SRC / "water4future-2026/aman-hydroponic-prototype.jpg", w4f / "aman-prototype.webp", 900)
     webp(SRC / "water4future-2026/water-talent-prize.jpg", w4f / "water-talent-prize.webp", 1200)
     webp(SRC / "water4future-2026/attestation-of-participation.jpg", w4f / "attestation-of-participation.webp", 1100)
     pdf(SRC / "water4future-2026/aman-presentation.pdf", w4f / "aman-presentation.pdf", drop_pages={16})
     print("Game4Health")
+    webp(SRC / "game4health-2026/pitch-team-stage.jpg", g4h / "pitch-team-stage.webp", 1200)
+    webp(SRC / "game4health-2026/pitch-solution-slide.jpg", g4h / "pitch-solution-slide.webp", 1200)
     pdf_image(SRC / "game4health-2026/certificate-of-participation.pdf", g4h / "certificate-of-participation.webp", 1400, rotate=90)
     pdf(SRC / "game4health-2026/heart-guardian-presentation.pdf", g4h / "heart-guardian-presentation.pdf")
     print("MECA WORLD CUP")
+    webp(SRC / "meca-world-cup-2026/team-photo-event.jpg", meca / "team-photo.webp", 900)
+    webp(SRC / "meca-world-cup-2026/presenting-sportlinebot.jpg", meca / "presenting-sportlinebot.webp", 900)
     webp(SRC / "meca-world-cup-2026/robot-prototype.jpg", meca / "robot-prototype.webp", 900)
     webp(SRC / "meca-world-cup-2026/user-manual-cover.jpg", meca / "user-manual-cover.webp", 900)
     webp(SRC / "meca-world-cup-2026/certificate-of-participation.jpg", meca / "certificate-of-participation.webp", 1400, rotate=90)

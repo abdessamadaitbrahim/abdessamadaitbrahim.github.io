@@ -25,7 +25,8 @@ All HTML pages, `404.html`, `sitemap.xml`, `robots.txt` and `favicon.svg` are ge
 Other scripts:
 
 - `python tools/make_og.py`: regenerates the Open Graph image `assets/img/site/og.png` (Pillow).
+- `python tools/make_icons.py`: regenerates the portrait icons (header avatar, `favicon.ico`, 32 / 180 / 512 px PNGs).
 - `python tools/import_incoming.py`: copies the publishable hackathon files from the private, git-ignored
-  `incoming/` folder into `assets/hackathons/` (WebP images, lighter PDFs without slides that show people; needs Pillow and pypdf).
+  `incoming/` folder into `assets/hackathons/` (WebP images including event photos, lighter PDFs; needs Pillow and pypdf).
 
 The CV download appears when `assets/cv/Abdessamad_Ait_Brahim_CV.pdf` exists.

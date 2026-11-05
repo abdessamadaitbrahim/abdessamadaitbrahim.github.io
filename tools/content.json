@@ -1273,6 +1273,13 @@
    "project_note": "AMAN was built during the hackathon and has no public code repository.",
    "images": [
     {
+     "src": "hackathons/water4future-2026/aman-prototype-demo.webp",
+     "alt": "Abdessamad Ait Brahim seated next to the AMAN hydroponic tower and a laptop showing the monitoring dashboard",
+     "caption": "With the AMAN prototype",
+     "w": 360,
+     "h": 480
+    },
+    {
      "src": "hackathons/water4future-2026/aman-prototype.webp",
      "alt": "AMAN prototype: vertical hydroponic tower next to a laptop showing the monitoring dashboard",
      "caption": "AMAN prototype and live dashboard",
@@ -1285,6 +1292,13 @@
      "caption": "Water Talent Prize",
      "w": 1023,
      "h": 721
+    },
+    {
+     "src": "hackathons/water4future-2026/attestation-of-participation.webp",
+     "alt": "Attestation of participation in the Water4Future Students Hackathon, Montpellier, 27 February 2026",
+     "caption": "Attestation of participation",
+     "w": 480,
+     "h": 640
     }
    ],
    "files": [
@@ -1332,11 +1346,32 @@
    "project_note": "",
    "images": [
     {
+     "src": "hackathons/game4health-2026/pitch-team-stage.webp",
+     "alt": "Team Health Hackers on stage pitching Heart Guardian to the audience at the Game4Health Hackathon",
+     "caption": "Team pitch on stage",
+     "w": 480,
+     "h": 319
+    },
+    {
+     "src": "hackathons/game4health-2026/pitch-solution-slide.webp",
+     "alt": "Abdessamad Ait Brahim presenting the Heart Guardian solution slide: ECG sensor, AI analysis, adaptive game",
+     "caption": "Presenting the solution",
+     "w": 480,
+     "h": 319
+    },
+    {
      "src": "img/projects/heartguardian/prototype.webp",
      "alt": "Heart Guardian prototype: ESP32 and ECG electrodes",
      "caption": "Heart Guardian prototype",
      "w": 827,
      "h": 808
+    },
+    {
+     "src": "hackathons/game4health-2026/certificate-of-participation.webp",
+     "alt": "Game4Health team attestation of participation for Health Hackers, issued by the SmartTech Lab of iSMAGI",
+     "caption": "Attestation of participation",
+     "w": 1400,
+     "h": 993
     }
    ],
    "files": [
@@ -1378,6 +1413,20 @@
    "project_note": "",
    "images": [
     {
+     "src": "hackathons/meca-world-cup-2026/team-photo.webp",
+     "alt": "Abdessamad Ait Brahim and teammate Abdelaaziz Ait Kheri in front of the MECA WORLD CUP 2026 sponsor wall",
+     "caption": "With my teammate at the event",
+     "w": 682,
+     "h": 900
+    },
+    {
+     "src": "hackathons/meca-world-cup-2026/presenting-sportlinebot.webp",
+     "alt": "Abdessamad Ait Brahim presenting SportLineBot with a microphone",
+     "caption": "Presenting SportLineBot",
+     "w": 602,
+     "h": 900
+    },
+    {
      "src": "hackathons/meca-world-cup-2026/robot-prototype.webp",
      "alt": "SportLineBot robot prototype with its paint tank, ESP32 board and ultrasonic sensor",
      "caption": "SportLineBot prototype",
@@ -1390,6 +1439,13 @@
      "caption": "User manual cover",
      "w": 682,
      "h": 900
+    },
+    {
+     "src": "hackathons/meca-world-cup-2026/certificate-of-participation.webp",
+     "alt": "MECA WORLD CUP 2026 certificate of participation, Club Mécatronique",
+     "caption": "Certificate of participation",
+     "w": 509,
+     "h": 379
     }
    ],
    "files": [
