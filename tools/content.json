@@ -38,23 +38,81 @@
  "interests": [
   [
    "Natural language processing",
-   "Transformers, multilingual and low-resource text"
+   "Transformers, multilingual and low-resource text",
+   [
+    [
+     "Botground",
+     "projects/botground.html"
+    ],
+    [
+     "Vocab Tutor",
+     "projects/vision-vocab-tutor.html"
+    ],
+    [
+     "Scout-AI",
+     "projects/scout-ai.html"
+    ]
+   ]
   ],
   [
    "Computer vision",
-   "Detection, recognition, image captioning"
+   "Detection, recognition, image captioning",
+   [
+    [
+     "Emotion Recognition",
+     "projects/emotion-recognition.html"
+    ],
+    [
+     "Image Captioning",
+     "projects/image-captioning.html"
+    ]
+   ]
   ],
   [
    "Deep learning",
-   "Architectures built and compared from scratch"
+   "Architectures built and compared from scratch",
+   [
+    [
+     "Emotion Recognition",
+     "projects/emotion-recognition.html"
+    ],
+    [
+     "Image Captioning",
+     "projects/image-captioning.html"
+    ],
+    [
+     "Botground",
+     "projects/botground.html"
+    ]
+   ]
   ],
   [
    "Multimodal AI",
-   "Vision and language together"
+   "Vision and language together",
+   [
+    [
+     "Image Captioning",
+     "projects/image-captioning.html"
+    ],
+    [
+     "Vocab Tutor",
+     "projects/vision-vocab-tutor.html"
+    ]
+   ]
   ],
   [
    "Big Data",
-   "Streaming, distributed processing, pipelines"
+   "Streaming, distributed processing, pipelines",
+   [
+    [
+     "Paris Traffic",
+     "projects/paris-traffic.html"
+    ],
+    [
+     "Hadoop Sales",
+     "projects/hadoop-sales.html"
+    ]
+   ]
   ],
   [
    "AI for signal processing",
@@ -80,7 +138,7 @@
     ],
     [
      "AMAN",
-     "hackathons/water4future-2026.html"
+     "projects/aman-hydroponic.html"
     ]
    ]
   ],
@@ -98,7 +156,7 @@
     ],
     [
      "AMAN",
-     "hackathons/water4future-2026.html"
+     "projects/aman-hydroponic.html"
     ]
    ]
   ]

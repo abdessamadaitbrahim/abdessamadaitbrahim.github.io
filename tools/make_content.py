@@ -452,19 +452,29 @@ SKILLS = [
  ("Embedded and IoT", ["ESP32", "Arduino", "WebSocket", "Signal processing"]),
 ]
 
+def proj(label, slug):
+    return (label, f"projects/{slug}.html")
+
+
+# Each card ends with "See ..." links (at most 3) to real projects or pages; checked below.
 INTERESTS = [
- ("Natural language processing", "Transformers, multilingual and low-resource text"),
- ("Computer vision", "Detection, recognition, image captioning"),
- ("Deep learning", "Architectures built and compared from scratch"),
- ("Multimodal AI", "Vision and language together"),
- ("Big Data", "Streaming, distributed processing, pipelines"),
- # the three below come only from Heart Guardian, SportLineBot, AMAN (Water4Future) and the STMicroelectronics internship
+ ("Natural language processing", "Transformers, multilingual and low-resource text",
+  [proj("Botground", "botground"), proj("Vocab Tutor", "vision-vocab-tutor"), proj("Scout-AI", "scout-ai")]),
+ ("Computer vision", "Detection, recognition, image captioning",
+  [proj("Emotion Recognition", "emotion-recognition"), proj("Image Captioning", "image-captioning")]),
+ ("Deep learning", "Architectures built and compared from scratch",
+  [proj("Emotion Recognition", "emotion-recognition"), proj("Image Captioning", "image-captioning"), proj("Botground", "botground")]),
+ ("Multimodal AI", "Vision and language together",
+  [proj("Image Captioning", "image-captioning"), proj("Vocab Tutor", "vision-vocab-tutor")]),
+ ("Big Data", "Streaming, distributed processing, pipelines",
+  [proj("Paris Traffic", "paris-traffic"), proj("Hadoop Sales", "hadoop-sales")]),
+ # the three below come only from Heart Guardian, SportLineBot, AMAN and the STMicroelectronics internship
  ("AI for signal processing", "ECG and sensor signals: filtering, feature extraction, classification",
-  [("Heart Guardian", "projects/heart-guardian.html")]),
+  [proj("Heart Guardian", "heart-guardian")]),
  ("AI and IoT", "Embedded sensors, ESP32 and real-time dashboards connected to models",
-  [("Heart Guardian", "projects/heart-guardian.html"), ("SportLineBot", "projects/sportlinebot.html"), ("AMAN", "hackathons/water4future-2026.html")]),
+  [proj("Heart Guardian", "heart-guardian"), proj("SportLineBot", "sportlinebot"), proj("AMAN", "aman-hydroponic")]),
  ("Industrial AI", "Production data, anomaly detection and decision support for industry",
-  [("STMicroelectronics", "experience.html#stmicroelectronics"), ("SportLineBot", "projects/sportlinebot.html"), ("AMAN", "hackathons/water4future-2026.html")]),
+  [("STMicroelectronics", "experience.html#stmicroelectronics"), proj("SportLineBot", "sportlinebot"), proj("AMAN", "aman-hydroponic")]),
 ]
 
 ABOUT = dict(
@@ -509,6 +519,23 @@ for v in VOLUNTEERING:
 for h in HACKATHONS:
     h["images"] = [dict(src=i[0], alt=i[1], caption=i[2], w=size(i[0])[0], h=size(i[0])[1]) for i in h["images"]]
     h["files"] = [dict(src=f[0], label=f[1], kind=f[2]) for f in h["files"]]
+
+# every interest link must point to an existing project, hackathon or experience entry
+_slugs = {p["slug"] for p in P}
+_hacks = {h["slug"] for h in HACKATHONS}
+_exps = {x["id"] for x in EXPERIENCE}
+for _t, _d, _links in INTERESTS:
+    assert 1 <= len(_links) <= 3, f"{_t}: 1 to 3 links"
+    for _label, _href in _links:
+        _page, _, _anchor = _href.partition("#")
+        if _page.startswith("projects/"):
+            assert _page[9:-5] in _slugs, f"{_t}: unknown project {_href}"
+        elif _page.startswith("hackathons/"):
+            assert _page[11:-5] in _hacks, f"{_t}: unknown hackathon {_href}"
+        elif _page == "experience.html":
+            assert _anchor in _exps, f"{_t}: unknown experience entry {_href}"
+        else:
+            raise AssertionError(f"{_t}: unexpected link {_href}")
 
 data = dict(site=SITE, about=ABOUT, interests=INTERESTS, skills=SKILLS, languages=LANGUAGES,
             projects=P, experience=EXPERIENCE, education=EDUCATION, hackathons=HACKATHONS,
